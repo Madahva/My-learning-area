@@ -1,10 +1,8 @@
-# Práctica de JavaScript - DOM - LISTA DE COMPRAS   
+# DOM JS Practice  - SHOPPING LIST
 
-El objetivo de este mini proyecto es crear una lista, asignarle items con texto y un boton para eliminar el item de la lista.
+It is a simple shopping list in vanilla Javascript. It allows users to add and remove shopping items
 
-El texto debe ser ingresado por el usuario en un input y debe ser validado.
-
-Hice uso de methodos y propiedades del DOM como: 
+I have made use of DOM methods and properties like:
 
  - createElement()
  - textContent
