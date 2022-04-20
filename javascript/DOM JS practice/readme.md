@@ -11,3 +11,7 @@ Hice uso de methodos y propiedades del DOM como:
  - remove()
  - appendChild()
  - classList()
+
+
+
+You can see the project here: https://codesandbox.io/s/new-tree-cloc49?file=/app.js
