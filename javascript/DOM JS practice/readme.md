@@ -1,4 +1,4 @@
-# DOM JS Practice  - SHOPPING LIST
+# DOM Practice - JS  - SHOPPING LIST
 
 It is a simple shopping list in vanilla Javascript. It allows users to add and remove shopping items
 
