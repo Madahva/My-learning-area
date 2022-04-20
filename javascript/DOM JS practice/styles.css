@@ -1,0 +1,15 @@
+body{
+    background-color: #f0dddd;
+}
+
+.tittle{
+    color: #1a5b82;
+    text-align: center;
+}
+
+.list__item-text{
+    color:Red;
+    display: inline-block;   
+    margin: 8px;
+    width: 200px;
+}
