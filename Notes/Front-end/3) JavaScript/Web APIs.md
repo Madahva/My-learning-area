@@ -1,3 +1,7 @@
+## APIs
+
+**Application Programming Interfaces (APIs)** are constructs made available in programming languages to allow developers to create complex functionality more easily. They abstract more complex code away from you, providing some easier syntax to use in its place.
+
 # Browser APIs
 
 Browser APIs are built into your web browser, and are able to expose data from the surrounding computer environment, or do useful complex things.
@@ -6,9 +10,16 @@ Browser APIs are built into your web browser, and are able to expose data from t
 
 This API allows you to manipulate HTML and CSS, creating, removing and changing HTML, dynamically applying new styles to your page, etc.
 
-## FETCH
+## Fetch API
 
 This API allows us to make network requests to retrieve resources from a server via JavaScript (e.g. images, text, JSON, even HTML snippets), meaning that we can update small sections of content without having to reload the entire page.
+
+The global **`fetch()`** method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available.
+
+#### Catching errors
+
+The `fetch()` API can throw an error for many reasons (for example, because there was no network connectivity or the URL was malformed in some way) and we are throwing an error ourselves if the server returned an error.
+
 
 
 # Third party APIs
