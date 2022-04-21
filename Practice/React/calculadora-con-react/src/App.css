@@ -1,0 +1,28 @@
+.App {
+  align-items: center;
+  background-color: #152238;
+  display: flex;
+  font-family: Lato, sans-serif;
+  height: 100vh;
+  justify-content: center;
+}
+
+.calculator__container {
+  background-color: #34568b;
+  border: 5px solid #ecf1f8;
+  border-radius: 20px;
+  height: 600px;
+  padding: 14px;
+  width: 400px;
+}
+
+.calculator__row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 4px;
+}
+
+.multiply {
+  display: none;
+}

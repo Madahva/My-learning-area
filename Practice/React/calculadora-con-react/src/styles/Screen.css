@@ -1,0 +1,21 @@
+.screen {
+    align-items: center;
+    background-color: #152219;
+    border-radius: 50px;
+    box-shadow: -1px 4px 1px 1px #ecf1f8;
+    color: #fff;
+    display: flex;
+    overflow-x: hidden;
+    font-size: 30px;
+    font-weight: 700;
+    height: 75px;
+    justify-content: flex-end;
+    margin: 1px solid #888;
+    margin-bottom: 20px;
+    padding: 11px 30px 11px 11px;
+    
+}
+
+.screen::selection {
+    background-color: #64a0aa;
+}
