@@ -1,38 +1,58 @@
-.App {
+body {
+  background-color: #b6c6df;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  cursor: pointer;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 68px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 68px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.X {
+  color: red;
 }
 
-.App-link {
-  color: #61dafb;
+.O {
+  color: blue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:hover {
+  background: rgb(227, 239, 246);
+}
+
+.reset {
+  cursor: pointer;
+  padding: 16px;
+  margin-top: 20px;
+  width: 100%;
 }
