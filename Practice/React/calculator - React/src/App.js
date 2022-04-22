@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Button from './componentes/Button'
-import Screen from './componentes/Screen';
-import ClearBtn from './componentes/ClearBtn';
+import Button from './components/Button'
+import Screen from './components/Screen';
+import ClearBtn from './components/ClearBtn';
 
 import { useState } from 'react';
 import { evaluate } from 'mathjs';
