@@ -45,7 +45,7 @@ const inputFibonnacciBtn = document.querySelector('#submitFibonnacci').addEventL
     return outputFibonnacci.textContent = "Too big";
   }
 
-  const fibonnacci = (n) => {
+  const fibonnacciSequence = (n) => {
     let a = 0;
     let b = 1;
     let input = new Array(n - 1).fill("")
@@ -61,6 +61,21 @@ const inputFibonnacciBtn = document.querySelector('#submitFibonnacci').addEventL
     return result;
   }
 
+
+  const fibonnacci = n => {
+    const fib = [0, 1]
+    
+    for(let i = 2; i <= n; i++) {
+      fib[i] = fib[i - 2] + fib[i -1]
+    }
+    return fib[n]
+  }
+  
+  /* const fibonnacci = n => {
+    if (n < 2) return n;
+    return fibonnacci(n - 2) + fibonnacci(n-1);
+  } */
+
   console.log(fibonnacci(inputFibonnacci));
-  outputFibonnacci.textContent = fibonnacci(inputFibonnacci);
+  outputFibonnacci.innerHTML = (fibonnacciSequence(inputFibonnacci) + '<br></br>' + fibonnacci(inputFibonnacci));
 });
