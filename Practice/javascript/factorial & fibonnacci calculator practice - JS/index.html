@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factorial & Fibonnacci calculator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <article class="factorial">
+
+        <h2 class="factorial__tittle">What is Factorial?</h2>
+        
+        <p class="factorial__para">
+            The factorial of a number is the function that multiplies the number by every natural number below it.</p>
+        <p class="factorial__para">
+            In other words, Factorial of a whole number 'n' is defined as the product of that number with every whole number till 1.</p>
+
+        <form id="factorial__form">
+            <label for="#factorial__input" class="factorial__label">Enter a non-negative integer:</label>
+            <div>
+                <input type="number" id="factorial__input" min="0" max="4999" value="1">
+                <input type="submit" id="submitFactorial" value="Compute">
+            </div>
+        </form>
+
+        <div class="factorial__output"></div>
+
+    </article>
+
+    <article class="fibonnacci">
+
+        <h2 class="fibonnacci__tittle">What is Fibonnacci?</h2>
+        
+        <p class="fibonnacci__para">
+            The Fibonacci Sequence is a set of numbers such that each number in the sequence is the sum of the two numbers that immediately preceded it.</p>
+       
+        <form id="fibonnacci__form">
+            <label for="#fibonnacci__input" class="fibonnacci__label">Enter a non-negative integer:</label>
+            <div>
+                <input type="number" id="fibonnacci__input" min="0" max="4999" value="1">
+                <input type="submit" id="submitFibonnacci" value="Compute">
+            </div>
+        </form>
+
+        <div class="fibonnacci__output"></div>
+
+    </article>
+
+
+</body>
+</html>

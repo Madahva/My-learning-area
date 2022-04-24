@@ -1,4 +1,4 @@
-## APIs
+# APIs
 
 **Application Programming Interfaces (APIs)** are constructs made available in programming languages to allow developers to create complex functionality more easily. They abstract more complex code away from you, providing some easier syntax to use in its place.
 
@@ -9,6 +9,18 @@ Browser APIs are built into your web browser, and are able to expose data from t
 ## **The DOM** **(Document Object Model)** **API** 
 
 This API allows you to manipulate HTML and CSS, creating, removing and changing HTML, dynamically applying new styles to your page, etc.
+
+## Web storage API
+
+The Web Storage API is a simple syntax for storing and retrieving data in the browser. It store simple name/value pairs of data (limited to strings, numbers, etc.) and retrieve these values when needed.
+
+**The localStorage object provides access to a local storage for a particular Web Site**. It allows you to store, read, add, modify, and delete data items for that domain. The data is stored with no expiration date, and will not be deleted when the browser is closed. 
+
+The sessionStorage object is identical to the localStorage object. The sessionStorage object stores data for one session. The data is deleted when the browser is closed.
+
+## IndexedDB
+
+The IndexedDB API (sometimes abbreviated IDB) is a complete database system available in the browser in which you can store complex related data, the types of which aren't limited to simple values like strings or numbers. You can store videos, images, and pretty much anything else in an IndexedDB instance.
 
 ## Fetch API
 
