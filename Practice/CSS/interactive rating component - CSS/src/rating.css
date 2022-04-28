@@ -6,6 +6,7 @@ body {
   flex-direction: column;
   justify-content: center;
   font-family: 'Overpass', sans-serif;
+  max-height: 100vh;
 }
 
 .rating {
