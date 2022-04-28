@@ -9,7 +9,7 @@ This is a repository for my practice code.
 - HTML
 - CSS
 - JavaScript
-- React.js
+- React
 
 
 <p align="center"> <img src= "https://user-images.githubusercontent.com/89199369/164584013-93e43cd2-8103-4920-9cc9-dfebf2bb26ff.png" /> </p>
