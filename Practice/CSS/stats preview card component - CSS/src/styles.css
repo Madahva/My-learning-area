@@ -1,0 +1,136 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  align-items: center;
+  background-color: #0a0c1b;
+  color: white;
+  display: flex;
+  min-height: 90vh;
+  padding: 2vh 3rem;
+}
+
+.card {
+  background-color: #1c1938;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1020px;
+  min-height: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card__image-container {
+  background-color: #a965d6;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 200px;
+}
+
+.card__image {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 100%;
+  mix-blend-mode: multiply;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__text-container {
+  padding: 2rem 0 1rem 0;
+}
+
+.card__text-tittle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 1rem;
+  min-height: 70px;
+}
+
+.card__text-span {
+  color: #a965d6;
+}
+
+.card__text-para {
+  color: #c1bfd1;
+  font-size: .8rem;
+  font-weight: 400;
+  margin: 1rem 1.5rem;
+  line-height: 1.5rem;
+}
+
+.card__text__info__item-tittle {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1.5rem;
+}
+
+.card__text__info__item-para {
+  font-size: .7rem;
+  color: #c1bfd1;
+  margin: .5rem;
+  text-transform: uppercase;
+}
+
+@media(min-width: 700px) {
+
+  .card__image-container {
+    height: 300px;
+  }
+
+  .card__text__info {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card__text-tittle {
+    font-size: 1.8rem;
+    margin: 2rem 5rem 1rem 4rem;
+  }
+
+  .card__text__info__item-tittle {
+    font-size: 1.5rem
+  }
+}
+
+@media(min-width: 920px) {
+
+  .card {
+    flex-direction: row;
+    min-height: 400px;
+    text-align: left;
+  }
+
+  .card__image-container {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    height: 400px;
+    order: 2;
+    width: 50%;
+  }
+
+  .card__text-container {
+    width: 50%;
+  }
+
+  .card__image {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+  }
+
+  .card__text-para {
+    margin: 1.5rem 5rem 1rem 4rem;
+  }
+
+  .card__text__info {
+    justify-content: space-between;
+    margin: 1.5rem 6rem 1rem 4rem;
+  }
+
+  .card__text__info__item-para {
+    margin-left: 0;
+  }
+}

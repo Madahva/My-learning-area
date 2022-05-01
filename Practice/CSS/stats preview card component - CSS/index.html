@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats preview card component | CSS practice</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/normalize.css">
+    <link rel="stylesheet" href="./src/styles.css">
 </head>
+
 <body>
+    <main class="card">
+        <div class="card__image-container">
+            <img src="./src/images/image-header-mobile.jpg" alt="banner image" class="card__image">
+        </div>
+        
+        <div class="card__text-container">
 
-  Get insights that help your business grow.
+            <h1 class="card__text-tittle">Get <span class="card__text-span">insights</span> that help your business grow.</h1>
+            <p class="card__text-para">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+            <div class="card__text__info">
+                <div class="card__text__info-item">
+                    <h2 class="card__text__info__item-tittle">10K+</h2>
+                    <p class="card__text__info__item-para">companies</p>
+                </div>
+                <div class="card__text__info-item">
+                    <h2 class="card__text__info__item-tittle">314</h2>
+                    <p class="card__text__info__item-para">templates</p>
+                </div>
+                <div class="card__text__info-item">
+                    <h2 class="card__text__info__item-tittle">12M+</h2>
+                    <p class="card__text__info__item-para">queries</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
