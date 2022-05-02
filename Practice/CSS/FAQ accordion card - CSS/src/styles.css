@@ -1,0 +1,128 @@
+* {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  align-items: center;
+    display: flex;
+    justify-content: center;
+  background-image: linear-gradient(180deg,
+  hsl(273deg 75% 66%) 0%,
+  hsl(270deg 75% 66%) 11%,
+  hsl(267deg 75% 66%) 22%,
+  hsl(263deg 75% 66%) 33%,
+  hsl(260deg 75% 66%) 44%,
+  hsl(256deg 75% 66%) 56%,
+  hsl(252deg 74% 66%) 67%,
+  hsl(249deg 74% 65%) 78%,
+  hsl(244deg 74% 65%) 89%,
+  hsl(240deg 73% 65%) 100%
+);
+  padding: 1rem 1.5rem;
+  min-height: 95.4vh;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding-bottom: 1rem;
+  max-width: 500px;
+}
+
+.card__image {
+  background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 200px; 
+  width: 350px;
+}
+
+.card__tittle {
+  color: 	#1d1e35;
+  margin: 1rem;
+  text-align: center;
+}
+
+.card__accordion {
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.card__accordion-item {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid 	#e7e7e9;
+  color: #4a4b5e;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+  padding: 18px 0;
+  text-align: left;
+  transition: 0.4s;
+  width: 100%;
+}
+
+.card__accordion-item:hover {
+  color: #f47c57;
+  font-weight: 700;
+}
+
+.active {
+  border-color: white;
+  font-weight: 700;
+}
+
+.active:after {
+  content: url(./images/icon-arrow-down.svg);
+}
+
+.card__accordion-item:after {
+  content: url(./images/icon-arrow-down.svg);
+  float: right;
+  margin-left: 5px;
+}
+
+.card__accordion-item__panel {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  color: #787887;
+  font-size: 12px;
+  max-height: 0;
+  line-height: 1.5rem;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.card__accordion-item__panel p {
+  margin-top: 0;
+}
+
+@media(min-width: 850px) {
+
+  .card {
+    display: flex;
+    max-width: 900px;
+  }
+
+  .card__tittle {
+    text-align: left;
+    padding-top: 3rem;
+    padding-left: 5rem;
+    margin: 0;
+  }
+
+  .card__accordion {
+    padding: 1rem 5rem 3rem 5rem;
+  }
+
+  .card__accordion-item {
+    font-size: 1rem;
+  }
+
+  .card__accordion-item__panel {
+    font-size: .9rem;
+  }
+
+}
