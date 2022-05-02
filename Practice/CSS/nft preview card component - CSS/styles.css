@@ -1,0 +1,122 @@
+* {
+  cursor: default;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #0d1a2d;
+  display: flex;
+  max-height: 85vh;
+  justify-content: center;
+  padding: 10vh 2rem 5vh 2rem;
+}
+
+.card {
+  background-color: #15273f;
+  border-radius: 1rem;
+  box-shadow: 2px -1px 43px 22px #0c1729;
+  max-width: 15rem;
+  padding: 2rem;
+}
+
+.card__image {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.card__image:hover {
+  filter: opacity(0.6) drop-shadow(0 0 0 #02fdf7);
+  background-image: url(./images/image-equilibrium.jpg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.card__image:hover~img {
+  display: block;
+}
+
+.card__image-hover {
+  display: none;
+  position: absolute;
+  left: 45%;
+  top: 34%;
+}
+
+.card__tittle {
+  color: #fffdfe;
+  font-size: 1.2rem;
+}
+
+.card__tittle:hover {
+  color: #02fdf7;
+  cursor: pointer;
+}
+
+.card__para {
+  color: #5d7496;
+  font-size: 18px;
+}
+
+.card__info {
+  display: flex;
+  border-bottom: 2px solid #293b53;
+  justify-content: space-between;
+  padding-bottom: .5rem;
+}
+
+.card__info__price {
+  align-items: center;
+  display: flex;
+  gap: .3rem;
+}
+
+.card__info__price-text {
+  color: #02fdf7;
+}
+
+.card__info__time {
+  align-items: center;
+  display: flex;
+  gap: .3rem;
+}
+
+.card__info__time-text {
+  color: #8aadda;
+}
+
+.card__author {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding-top: .5rem;
+}
+
+.card__author-image-container {
+  width: 2rem;
+}
+
+.card__author-image {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.card__author-text {
+  color: #5d7496;
+}
+
+.card__author-text-name {
+  color: #a8b0bc;
+}
+
+.card__author-text-name:hover {
+  color: #02fdf7;
+  cursor: pointer;
+}
+
+@media(min-width: 700px){
+  .card__image-hover {
+    left: 48%;
+    top: 30%;
+  }
+}
