@@ -4,20 +4,20 @@
 
 body {
   align-items: center;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-image: linear-gradient(180deg,
-  hsl(273deg 75% 66%) 0%,
-  hsl(270deg 75% 66%) 11%,
-  hsl(267deg 75% 66%) 22%,
-  hsl(263deg 75% 66%) 33%,
-  hsl(260deg 75% 66%) 44%,
-  hsl(256deg 75% 66%) 56%,
-  hsl(252deg 74% 66%) 67%,
-  hsl(249deg 74% 65%) 78%,
-  hsl(244deg 74% 65%) 89%,
-  hsl(240deg 73% 65%) 100%
-);
+      hsl(273deg 75% 66%) 0%,
+      hsl(270deg 75% 66%) 11%,
+      hsl(267deg 75% 66%) 22%,
+      hsl(263deg 75% 66%) 33%,
+      hsl(260deg 75% 66%) 44%,
+      hsl(256deg 75% 66%) 56%,
+      hsl(252deg 74% 66%) 67%,
+      hsl(249deg 74% 65%) 78%,
+      hsl(244deg 74% 65%) 89%,
+      hsl(240deg 73% 65%) 100%);
   padding: 1rem 1.5rem;
   min-height: 95.4vh;
 }
@@ -27,18 +27,33 @@ body {
   border-radius: 2rem;
   padding-bottom: 1rem;
   max-width: 500px;
+  padding-top: 100px;
 }
 
-.card__image {
-  background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+.card__image-movil {
+  background-image: url("./images/illustration-woman-online-mobile.svg");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 200px; 
-  width: 350px;
+  height: 170px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: -65px;
+  z-index: 1;
+}
+
+.card__image-movil__pattern {
+  background-image: url("./images/bg-pattern-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 104px;
+  width: 100%;
+  z-index: 11;
+  position: absolute;
+  margin-top: -425px;
 }
 
 .card__tittle {
-  color: 	#1d1e35;
+  color: #1d1e35;
   margin: 1rem;
   text-align: center;
 }
@@ -51,7 +66,7 @@ body {
 .card__accordion-item {
   background-color: #fff;
   border: none;
-  border-bottom: 1px solid 	#e7e7e9;
+  border-bottom: 1px solid #e7e7e9;
   color: #4a4b5e;
   cursor: pointer;
   font-size: 13px;
@@ -101,11 +116,31 @@ body {
 
 @media(min-width: 850px) {
 
-  .card {
-    display: flex;
-    max-width: 900px;
+  body {
+    flex-direction: row;
   }
 
+  .card__image-movil {
+    display: none;
+  }
+
+  .card__image-movil__pattern {
+    display: none;
+  }
+
+  .card__image-desktop {
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 372px;
+    height: 459px;
+  }
+
+  .card {
+    display: flex;
+    min-width: 1100px;
+  }
+  
   .card__tittle {
     text-align: left;
     padding-top: 3rem;
@@ -114,7 +149,7 @@ body {
   }
 
   .card__accordion {
-    padding: 1rem 5rem 3rem 5rem;
+    padding: 1rem 5rem 3rem 1rem;
   }
 
   .card__accordion-item {
