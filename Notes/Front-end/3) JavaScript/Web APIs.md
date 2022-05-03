@@ -20,7 +20,7 @@ The sessionStorage object is identical to the localStorage object. The sessionSt
 
 ## IndexedDB
 
-The IndexedDB API (sometimes abbreviated IDB) is a complete database system available in the browser in which you can store complex related data, the types of which aren't limited to simple values like strings or numbers. You can store videos, images, and pretty much anything else in an IndexedDB instance.
+The IndexedDB API is a complete database system available in the browser in which you can store complex related data, the types of which aren't limited to simple values like strings or numbers. You can store videos, images, and pretty much anything else in an IndexedDB instance.
 
 ## Fetch API
 
