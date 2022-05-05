@@ -137,8 +137,9 @@ body {
 @media(min-width: 56em) {
 
   body {
-    margin: 3rem;
-    min-height: 79.3vh;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
     padding: 0;
   }
 
@@ -150,6 +151,7 @@ body {
     margin: 6rem auto;
     padding-right: 2rem;
     position: relative;
+    height: fit-content;
   }
 
   .card__box-image {
