@@ -3,7 +3,7 @@ import '../styles/Testimony.css';
 
 const Testimony = (props) => {
   return (
-    <div className='testimony'>
+    <div className={props.class}>
       <div className="testimony__header">
         <img
           className='testimony__image'

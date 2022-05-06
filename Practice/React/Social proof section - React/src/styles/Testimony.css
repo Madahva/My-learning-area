@@ -38,6 +38,7 @@
     .testimony__container {
         display: flex;
         gap: 2rem;
+        align-items: center;
     }
 
     .testimony__image {
@@ -46,6 +47,21 @@
     }
 
     .testimony__text {
-        font-size: 16px;
+        font-size: 14.5px;
+    }
+
+    .testimony__first {
+        align-self: flex-start;
+
+    }
+
+    .testimony__second {
+        margin-top: 4rem;
+        align-self: flex-start;
+    }
+
+    .testimony__third {
+        margin-top: 7rem;
+        align-self: flex-start;
     }
 }

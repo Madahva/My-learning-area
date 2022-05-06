@@ -29,6 +29,7 @@ function App() {
 
         <Testimony
           image={colton}
+          class="testimony testimony__first"
           alt="Colton image"
           name="Colton Smith"
           testimony="We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent!"
@@ -36,11 +37,13 @@ function App() {
         <Testimony
           image={irene}
           alt="Irene image"
+          class="testimony testimony__second"
           name="Irene Roberts"
           testimony="Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery."
         />
         <Testimony
           image={anne}
+          class="testimony testimony__third"
           alt="Anne image"
           name="Anne Wallace"
           testimony="Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone!"

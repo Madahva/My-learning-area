@@ -30,14 +30,17 @@
 @media(min-width: 58em){
 
     body {
+        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: 0 0, right 0 bottom -5rem;
         display: flex;
         justify-content: center;
     }
     .page {
-        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-image: none;
         flex-direction: column;
         gap: 2rem;
-        padding: 10rem 6rem;
+        padding: 2.9rem 6rem;
         max-width: 1000px;
     }
 
@@ -56,9 +59,5 @@
         font-size: 3rem;
         margin: 0;
         line-height: 2.5rem;
-    }
-
-    .test {
-        background-color: #000;
     }
 }
