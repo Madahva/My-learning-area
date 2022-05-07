@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El juego del ahorcado">
+    <meta name="keywords" content="el ahoracado, jugar al ahorcado online, juego de adivinanzas">
+    <meta name="author" content="Guillermo Galarza"> 
+    <title>El ahorcado: juego de adivinanzas</title>
+    <link rel="stylesheet" href="src/normalize.css">
+    <link rel="shortcut icon" href="src/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://kit.fontawesome.com/a17eedded9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header><h1 id="title">El juego del ahorcado</h1></header>
+
+    <main id="main-menu">
+
+        <div class="main-menu__container">
+            <input type="button" class="main-menu__btn-start" onclick="startGame()" value="Iniciar juego">
+            <input type="button" class="main-menu__btn-add-word" onclick="addWord()" value="Agregar nueva palabra">
+        </div>
+
+        <div id="keyboard"></div>
+
+    </main>
+
+    <footer id="footer">
+        <p><span>Author:</span> Guillermo Galarza</p>
+        <a href="https://www.linkedin.com/in/guillermo-galarza-8a478220a/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/Madahva/Challenge-Alura-2-Ahoracado" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+    </footer>
+
+    <div id="myModalDerrota" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>¡Derrota!</h2>
+          </div>
+          <div class="modal-body">
+            <p>La respuesta correcta era: <span id="respuesta__derrota"></span></p>
+          </div>
+        </div>  
+    </div>
+
+    <div id="myModalVictoria" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>¡Victoria!</h2>
+          </div>
+          <div class="modal-body">
+            <p>La respuesta era: <span id="respuesta__victoria"></span></p>
+          </div>
+        </div>  
+    </div>
+
+    <div id="AddWordModal" class="modal">
+      <div class="modal-content">
+        <div id="modal-header" class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Agregar nueva palabra</h2>
+        </div>
+        <div class="modal-body">
+          <textarea id="modalText" class="textarea" maxlength="9" spellcheck="false" autofocus="on" placeholder="Ingrese la palabra aquí"></textarea>
+        </div>
+        <div class="modal-footer"><i id="doneBtn" class="fa-solid fa-check fa-3x"></i></div>
+      </div>
+    </div>
+    
+    <script src="src/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Encriptar y desencriptar texto gratis">
+    <meta name="keywords" content="Encriptar, desencriptar, encrypt, decrypt">
+    <meta name="author" content="Guillermo Galarza">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrar y descifrar texto Online</title>
+    <link rel="stylesheet" href="src/normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="src/logo.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/77a505c4c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+		<h1>Cifrar y descifrar texto Online</h1>
+	</nav>
+    <main>
+        <section class="input-section">
+            <textarea class="input-section__textarea" spellcheck="false" autofocus="on" placeholder="Ingrese el texto aquí"></textarea>
+			<p id="input-section__error-msg"></p>
+            <div class="input-section__btns-container">
+                <div class="input-section__help-container">
+                    <img src="src/info icon.svg">
+                    <p class="input-section__help">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="input-section__buttons-container">
+                    <input class="input-section__encrypt-btn" onclick="encrypt()" type="button" value="Encriptar">
+                    <input class="input-section__decrypt-btn" onclick="decrypt()" type="button" value="Desencriptar">
+                </div>
+            </div>
+        </section>
+        <section class="output-section">
+                <img class="output-section__no-msg" src="src/not found.svg">
+                <h4>Ningún mensaje fue encontrado</h4>
+                <h5 class="output-section__no-msg">Ingresa el texto que desees encriptar o desencriptar.</h5>
+				<textarea disabled id="output-section__result"></textarea>
+				<button id="output-section__copy-btn">Copiar</button>
+				<p id="output-section__copy-text"></p>
+        </section>
+    </main>
+	<footer>
+        <p><span>Author:</span> Guillermo Galarza</p>
+        <a href="https://www.linkedin.com/in/guillermo-galarza-8a478220a/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/Madahva/Challenge-Alura-1" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

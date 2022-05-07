@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#input-section__error-msg{
+    color:red;
+    font-size: 20px;
+    height: fit-content;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+#output-section__copy-text{
+    color:green;
+    font-size: 20px;
+    height: fit-content;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 1px;
+}
+
+:root {
+    --mainColor: #0A3871;
+    --grayColor: #495057;
+    --darkGrayColor: #343A40;
+}
+
+body {
+    background: #F3F5FC;
+}
+
+textarea {
+    resize: none;
+    border: none;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    padding-top: 15px;
+    color: #fff;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+a:hover{
+    color: var(--mainColor);
+}
+
+#output-section__result{
+    background: white;
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--mainColor);
+    font-size: 32px;
+    height: fit-content;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    outline: transparent;
+    width: 700px;
+    height: 75px;
+
+}
+
+footer {
+    position: static;
+    padding: 15px;
+    padding-bottom: 22px;
+    background-color: rgb(86, 116, 180);
+    color: white;
+    user-select: none;
+  }
+
+span{
+    transition: all 300ms ease;
+    font-weight:900;
+}
+
+span:hover{
+    color: var(--mainColor);
+}
+
+h1, nav {
+    font-weight: 400;
+    padding-left: 3%;
+    padding-top: 1%;
+    text-align: left;
+    padding: 3px;
+    padding-left: 10px;
+    color: white;
+    background-color: rgb(86, 116, 180);
+    user-select: none;
+}
+
+section {
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 30vh;
+}
+.input-section {
+    height: 50vh;
+}
+
+.input-section__textarea {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--mainColor);
+    font-size: 32px;
+    height: fit-content;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 6vh;
+    outline: transparent;
+    width: 700px;
+}
+
+.input-section__textarea::placeholder {
+    color: var(--mainColor);
+    opacity: 1;
+    user-select: none;
+  }
+
+.input-section__btns-container {
+    margin-top: 7vh;
+    
+}
+
+.input-section__help-container {
+    display: flex;
+    user-select: none;
+}
+
+.input-section__help {
+    color: var(--grayColor);
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0em;
+    margin-left: 8px;
+    text-align: left;
+}
+
+input[type="button"] {
+    border: 1px solid;
+    border-color: var(--mainColor);
+    border-radius: 24px;
+    color: var(--mainColor);
+    height: 8vh;
+    margin-bottom: 2vh;
+    width: 95vw;
+    cursor: pointer;
+}
+
+.input-section__encrypt-btn {
+    background-color: var(--mainColor);
+    color: white !important;
+    margin-top: 2vh;
+    transition: all 300ms ease;
+}
+
+.input-section__decrypt-btn{
+    transition: all 300ms ease;
+}
+
+.input-section__encrypt-btn:hover{
+    background-color: var(--grayColor);
+}
+
+.input-section__decrypt-btn:hover{
+    background-color: var(--mainColor);
+    color: white;
+}
+#output-section__copy-btn {
+    display: inline;
+    background-color: var(--mainColor);
+    color: white;
+    margin-top: 2vh;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 110px;
+    bottom: 120px;
+    transition: all 300ms ease;
+}
+
+#output-section__copy-btn:hover{
+    background-color: var(--grayColor);
+}
+
+.output-section {
+    background-color: white;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    margin-top: 4vh;
+    padding: 32px;
+    height: 175px;
+    user-select: none;
+}
+
+.output-section>img {
+    display: none;
+}
+
+.output-section>h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--darkGrayColor);
+}
+
+.output-section>h5 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+@media (min-width: 1020px) {
+    
+    #output-section__result{
+        height: 300px;
+        width: auto;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80vh;
+    }
+    
+    section {
+        padding-left: 15vw;
+        padding-right: 0;
+        height: fit-content;
+    }
+    
+    .input-section {
+        display: flex;
+        flex-direction: column;
+        height: 85vh;
+        justify-content: space-between;
+    }
+    
+    .input-section__textarea {
+        font-size: 2rem;
+        width: 700px;
+        height: 400px;
+    }
+    
+    .input-section__help-container {
+        align-items: center;
+    }
+    
+    .input-section__help-container>img {
+        width: 1vw;
+        pointer-events: none;
+    }
+    
+    .input-section__help {
+        font-size: 1rem;
+    }
+    
+    .input-section__buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 50vw;
+    }
+    
+    input[type="button"] {
+        border-radius: 44px;
+        width: 25vw;
+        font-size: 1rem;
+    }
+    
+    .input-section__encrypt-btn, .input-section__decrypt-btn {
+        margin-top: 2vh;
+        width: 47%;
+    }
+    
+    .output-section {
+        position: absolute;
+        right: 3vw;
+        top: 3vh;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2%;
+        width: 25vw;
+        border-radius: 45px;
+    }
+
+    .output-section>img {
+        display: inline;
+        pointer-events: none;
+    }
+    
+    .output-section>h4 {
+        font-size: 1.5rem;
+    }
+    
+    .output-section>h5 {
+        font-size: 1rem;
+ 
+    }
+
+    #output-section__copy-btn {
+    display: inline;
+    position: static;
+    }
+}
