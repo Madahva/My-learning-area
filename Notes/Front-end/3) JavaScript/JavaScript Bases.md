@@ -109,8 +109,6 @@ Scope — a very important concept when dealing with functions. When you create 
 The scope is a policy that manages the availability of variables. A variable defined inside a scope is accessible only within that scope, but inaccessible outside. In JavaScript, scopes are created by code blocks, functions, modules.
 
 ## conditional statements
-
-
 The conditional statements in JavaScript are used for checking a specific condition and executing the code based on the specified condition.
 
 ### switch statements
@@ -124,8 +122,20 @@ The conditional (ternary) operator is the only JavaScript operator that takes th
 
 The use of the ternary operator will make the code shorter in comparison to the IF ELSE statement. The code can be quick in length in comparison to the IF ELSE statement. The readability of the code will increase with the usage of conditional statements. The use of the ternary operator makes the code simpler.
 
+### Throw, and Try...Catch...Finally
+
+The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The `catch` statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The `throw` statement defines a custom error.
+
+If you use `throw` together with `try` and `catch`, you can control program flow and generate custom error messages.
+
+The `finally` statement defines a code  block to run regardless of the result.
 
 ## Loops
+There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times.
 
 ### For
 A JavaScript for loop executes a block of code as long as a specified condition is true. The condition expression is evaluated on every loop. A loop continues to run if the expression returns true. Loops repeat the same block of code until a certain condition is met.
@@ -143,12 +153,15 @@ The syntax is: do { statements } while (condition); Here's what it does. First, 
 ### For of
 The basic tool for looping through a collection is the for...of loop.
 
+The `for...of` statement creates a loop Iterating over iterable objects (including `Array`, `Map`, `Set`, `arguments` object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
 JavaScript also has more specialized loops for collections.
 
 You can use map() to do something to each item in a collection and create a new collection containing the changed items.
 
 You can use filter() to test each item in a collection, and create a new collection containing only items that match.
 
+### For in
+The `for...in` statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements.
 
 ## JSON
 
