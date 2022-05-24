@@ -76,6 +76,97 @@ In JavaScript, an object is an unordered collection of key-value pairs. Each key
 Functions that are part of objects are called methods.
 
 
+## Operators
+In JavaScript, an operator is **a special symbol used to perform operations on operands (values and variables)**.
+
+There are different types of operators.
+
+### Assignment operators
+
+In general, assignments are used within a variable declaration.
+
+An assignment operator assigns a value to its left operand based on the value of its right operand. The simple assignment operator is equal (`=`), which assigns the value of its right operand to its left operand.
+
+Assignment
+
+`x = f()`
+
+`x = f()`
+
+Addition assignment
+
+`x += f()`
+
+`x = x + f()`
+
+Subtraction assignment
+
+`x -= f()`
+
+`x = x - f()`
+
+Multiplication assignment
+
+`x *= f()`
+
+`x = x * f()`
+
+Division assignment
+
+`x /= f()`
+
+`x = x / f()`
+
+Remainder assignment
+
+`x %= f()`
+
+`x = x % f()`
+
+Exponentiation assignment
+
+`x **= f()`
+
+### Comparison operators
+
+A comparison operator compares its operands and returns a logical value based on whether the comparison is true. The operands can be numerical, string, logical, or object values. 
+
+Strings are compared based on standard lexicographical ordering, using Unicode values.
+
+![[Pasted image 20220523122027.png]]
+
+
+### Arithmetic operators
+
+An arithmetic operator takes numerical values (either literals or variables) as their operands and returns a single numerical value. The standard arithmetic operators are addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`).
+
+In addition to the standard arithmetic operations (`+`, `-`, `*`, `/`), JavaScript provides the arithmetic operators listed in the following table:
+
+![[Pasted image 20220523122350.png]]
+
+### Operator precedence
+
+The _precedence_ of operators determines the order they are applied when evaluating an expression. You can override operator precedence by using parentheses.
+
+### Logical operators
+
+Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the `&&` and `||` operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.
+
+![[Pasted image 20220523122839.png]]
+
+### String operators
+
+In addition to the comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings.
+
+### Ternary operator
+The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark ( ? ), then an expression to execute if the condition is truthy followed by a colon ( : ), and finally the expression to execute if the condition is falsy.
+
+The use of the ternary operator will make the code shorter in comparison to the IF ELSE statement. The code can be quick in length in comparison to the IF ELSE statement. The readability of the code will increase with the usage of conditional statements. The use of the ternary operator makes the code simpler.
+
+## typeof
+
+The `typeof` operator returns a string indicating the type of the unevaluated operand. `operand` is the string, variable, keyword, or object for which the type is to be returned.
+
 ## Functions
 
 Functions are reusable blocks of code that you can write once and run again and again, saving the need to keep repeating code all the time.
@@ -84,15 +175,14 @@ A function is defined by using the keyword function, followed by a name, with pa
 
 When we want to run the code, we type the name of the function followed by the parentheses.
 
-``` Js
-function doThings(){
-	// Ok
-}
-``` 
+function hoisting only works with function _declarations_—not with function _expressions_.
 
 ### Anonymous function
 
  An anonymous function is that type of function that has no name or we can say which is without any name. When we create an anonymous function, it is declared without any identifier. It is the difference between a normal function and an anonymous function.
+
+### Rest parameters
+The rest parameter syntax allows us to represent an indefinite number of arguments as an array.
 
 
 ### Arrow function
@@ -117,10 +207,7 @@ The switch statement executes a block of code depending on different cases. The 
 ### IF-ELSE
 The if/else statement executes a block of code if a specified condition is true. If the condition is false, another block of code can be executed. The if/else statement is a part of JavaScript's "Conditional" Statements, which are used to perform different actions based on different conditions.
 
-### Ternary operator
-The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark ( ? ), then an expression to execute if the condition is truthy followed by a colon ( : ), and finally the expression to execute if the condition is falsy.
 
-The use of the ternary operator will make the code shorter in comparison to the IF ELSE statement. The code can be quick in length in comparison to the IF ELSE statement. The readability of the code will increase with the usage of conditional statements. The use of the ternary operator makes the code simpler.
 
 ### Throw, and Try...Catch...Finally
 
