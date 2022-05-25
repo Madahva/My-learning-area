@@ -165,7 +165,7 @@ A comparison operator compares its operands and returns a logical value based on
 
 Strings are compared based on standard lexicographical ordering, using Unicode values.
 
-![[Pasted image 20220523122027.png]]
+![[Comparison.operators.png]]
 
 
 ### Arithmetic operators
@@ -173,7 +173,7 @@ An arithmetic operator takes numerical values (either literals or variables) as 
 
 In addition to the standard arithmetic operations (`+`, `-`, `*`, `/`), JavaScript provides the arithmetic operators listed in the following table:
 
-![[Pasted image 20220523122350.png]]
+![[Arithmetic.operators.png]]
 
 ### Operator precedence
 The _precedence_ of operators determines the order they are applied when evaluating an expression. You can override operator precedence by using parentheses.
@@ -181,7 +181,7 @@ The _precedence_ of operators determines the order they are applied when evalu
 ### Logical operators
 Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the `&&` and `||` operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.
 
-![[Pasted image 20220523122839.png]]
+![[Logical.operators.png]]
 
 ### String operators
 In addition to the comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings.
