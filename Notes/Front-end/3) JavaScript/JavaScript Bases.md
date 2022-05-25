@@ -10,6 +10,7 @@ A very common use of JavaScript is to dynamically modify HTML and CSS to update 
 ## How to insert JavaScript in HTML?
 You can add JavaScript code to an HTML document by employing the dedicated HTML tag `<script>`
 
+
 ``` html
 <script src="script.js" defer></script>
 ``` 
@@ -86,7 +87,6 @@ Template literals.
 #### the methods of String objects.
 https://www.w3schools.com/jsref/jsref_obj_string.asp
 
-![[string.methods.png]]
 ![string methods](https://user-images.githubusercontent.com/89199369/170275096-17ed89c4-67a9-41c5-a805-96a55be110a4.png)
 
 #### Multi-line template literals
@@ -164,15 +164,14 @@ A comparison operator compares its operands and returns a logical value based on
 
 Strings are compared based on standard lexicographical ordering, using Unicode values.
 
-![[Comparison.operators.png]]
-
+![Comparison operators](https://user-images.githubusercontent.com/89199369/170280609-03581211-0bea-4956-9208-cf5ba1a3d91f.png)
 
 ### Arithmetic operators
 An arithmetic operator takes numerical values (either literals or variables) as their operands and returns a single numerical value. The standard arithmetic operators are addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`).
 
 In addition to the standard arithmetic operations (`+`, `-`, `*`, `/`), JavaScript provides the arithmetic operators listed in the following table:
 
-![[Arithmetic.operators.png]]
+![Arithmetic operators](https://user-images.githubusercontent.com/89199369/170281017-f79bfd81-7b32-4014-9292-3f32851357e0.png)
 
 ### Operator precedence
 The _precedence_ of operators determines the order they are applied when evaluating an expression. You can override operator precedence by using parentheses.
@@ -180,7 +179,7 @@ The _precedence_ of operators determines the order they are applied when evalu
 ### Logical operators
 Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the `&&` and `||` operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.
 
-![[Logical.operators.png]]
+![Logical operators](https://user-images.githubusercontent.com/89199369/170280893-ac0de869-000d-4276-999a-130aade5ebf8.png)
 
 ### String operators
 In addition to the comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings.
