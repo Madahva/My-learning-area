@@ -75,7 +75,7 @@ When creating the **greys**, **mix** in a bit of the **primary** color.
 Make sure that every color you’re using for **text** or **interactive** elements has enough **contrast**.
 
 
-![[Pasted image 20220511133613.png]]
+![[color meanings & associations.png]]
 
 The same hue with different saturation and brightness can evoke different feelings.
 
