@@ -8,7 +8,7 @@ A very common use of JavaScript is to dynamically modify HTML and CSS to update 
 ---
 
 ## How to insert JavaScript in HTML?
-You can add JavaScript code in an HTML document by employing the dedicated HTML tag `<script>`
+You can add JavaScript code to an HTML document by employing the dedicated HTML tag `<script>`
 
 
 ``` html
@@ -17,25 +17,25 @@ You can add JavaScript code in an HTML document by employing the dedicated HTML 
 
 If you use the defer attribute, both the script and the HTML will load simultaneously.
 
-Scripts loaded with the defer attribute will load in the order they appear on the page. They won't run until the page content has all loaded, which is useful if your scripts depend on the DOM being in place (e.g. they modify one or more elements on the page).
+Scripts loaded with the defer attribute will load in the order they appear on the page. They won't run until the page content has all been loaded, which is useful if your scripts depend on the DOM being in place (e.g., they modify one or more elements on the page).
 
 ---
 
 ## Event listener
-An event listener is a procedure in JavaScript that waits for an event to occur. The simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
+An event listener is a procedure in JavaScript that waits for an event to occur. A simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
 
-you can have multiple handlers for a single event.
+You can have multiple handlers for a single event.
 
 ---
 
 ## Variables
 A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a sentence.
 
-Variables are basically names for values (such as numbers, or strings of text). You create a variable with the keyword **let** followed by a name for your variable.
+Variables are basically names for values (such as numbers, or strings of text). Create a variable with the keyword **let** followed by a name for your variable.
 
-Constants are also used to name values, but unlike variables, you can't change the value once set. You create a constant with the keyword **const** followed by a name for the constant.
+Constants are also used to name values, but unlike variables, you can't change the value once set. Create a constant with the keyword **const** followed by a name for the constant.
  
-You can assign a value to your variable or constant with an equals sign (=) followed by the value you want to give it.
+You can assign a value to your variable or constant with an equal sign (=) followed by the value you want to give it.
 
 Use const when you can, and use let when you have to.
 
@@ -66,11 +66,12 @@ The built-in **Math** object has properties and methods for mathematical const
 
 These include trigonometric, logarithmic, exponential, and other functions.
 
- the `Math` object has a large variety of methods.
+ The `Math` object has a large variety of methods.
 
  you can use the **Date** object and its methods to work with dates and times in your applications. The `Date` object has a large number of methods for setting, getting, and manipulating dates.
 
 ---
+
 
 ### Arrays
 An array is a single object that contains multiple values enclosed in square brackets and separated by commas. 
@@ -78,7 +79,7 @@ An array is a single object that contains multiple values enclosed in square bra
 ---
 
 ### Strings
-Strings are pieces of text. When you give a variable a string value, you need to wrap it in single or double quote marks;
+Strings are pieces of text. When you give a variable a string value, you need to wrap it in single or double quotation marks;
 
 Escaping characters in a string
 Template literals.
@@ -87,6 +88,7 @@ Template literals.
 https://www.w3schools.com/jsref/jsref_obj_string.asp
 
 ![[string.methods.png]]
+![string methods](https://user-images.githubusercontent.com/89199369/170275096-17ed89c4-67a9-41c5-a805-96a55be110a4.png)
 
 #### Multi-line template literals
 [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
@@ -197,7 +199,7 @@ The `typeof` operator returns a string indicating the type of the unevaluated 
 ## Functions
 Functions are reusable blocks of code that you can write once and run again and again, saving the need to keep repeating code all the time.
 
-A function is defined by using the keyword function, followed by a name, with parentheses put after it. After that we put two curly braces ({ }). Inside the curly braces goes all the code that we want to run whenever we call the function.
+A function is defined by using the keyword function, followed by a name, with parentheses put after it. After that we put on two curly braces ({ }). Inside the curly braces goes all the code that we want to run whenever we call the function.
 
 When we want to run the code, we type the name of the function followed by the parentheses.
 
@@ -219,7 +221,7 @@ Arrow functions are best for callbacks or methods like map, reduce, or forEach.
 ### Scopes
 Scope — a very important concept when dealing with functions. When you create a function, the variables and other things defined inside the function are inside their own separate scope, meaning that they are locked away in their own separate compartments, unreachable from code outside the functions.
 
-The scope is a policy that manages the availability of variables. A variable defined inside a scope is accessible only within that scope, but inaccessible outside. In JavaScript, scopes are created by code blocks, functions, modules.
+The scope is a policy that manages the availability of variables. A variable defined inside a scope is accessible only within that scope, but inaccessible outside. In JavaScript, scopes are created by code blocks, functions, and modules.
 
 ---
 
@@ -227,15 +229,15 @@ The scope is a policy that manages the availability of variables. A variable def
 The conditional statements in JavaScript are used for checking a specific condition and executing the code based on the specified condition.
 
 ### switch statements
-The switch statement executes a block of code depending on different cases. The switch statement is a part of JavaScript's "Conditional" Statements, which are used to perform different actions based on different conditions. Use switch to select one of many blocks of code to be executed.
+The switch statement executes a block of code depending on different cases. The switch statement is a part of JavaScript's "Conditional" Statements, which are used to perform different actions based on different conditions. Use switch to select one of the many blocks of code to be executed.
 
 ### IF-ELSE
 The if/else statement executes a block of code if a specified condition is true. If the condition is false, another block of code can be executed. The if/else statement is a part of JavaScript's "Conditional" Statements, which are used to perform different actions based on different conditions.
 
 
 
-### Throw, and Try...Catch...Finally
-The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
+### Throw, and Try... Catch... Finally
+The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
 
 The `catch` statement allows you to define a block of code to be executed, if an error occurs in the try block.
 
@@ -266,7 +268,7 @@ The syntax is: do { statements } while (condition); Here's what it does. First, 
 ### For of
 The basic tool for looping through a collection is the for...of loop.
 
-The `for...of` statement creates a loop Iterating over iterable objects (including `Array`, `Map`, `Set`, `arguments` object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
+The `for...of` statement creates a loop Iterating over iterable objects (including `Array`, `Map`, `Set`, `arguments` objects and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
 JavaScript also has more specialized loops for collections.
 
 You can use map() to do something to each item in a collection and create a new collection containing the changed items.
