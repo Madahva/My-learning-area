@@ -10,7 +10,6 @@ A very common use of JavaScript is to dynamically modify HTML and CSS to update 
 ## How to insert JavaScript in HTML?
 You can add JavaScript code to an HTML document by employing the dedicated HTML tag `<script>`
 
-
 ``` html
 <script src="script.js" defer></script>
 ``` 
