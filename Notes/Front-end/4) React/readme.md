@@ -1,8 +1,11 @@
+**React is a JavaScript library for building user interfaces**
+
 # Content
 
-- Componentes
+- React Main Concepts
+- Components
 - JSX
-- prop 
+- props
 - fragment 
 
 
