@@ -1,47 +1,139 @@
-##   OOP
+# OOP
 
 Object-oriented programming is about modeling a system as a collection of objects, which each represent some particular aspect of the system. Objects contain both functions (or methods) and data.
 
-### Classes and instances
+
+## Classes and instances
 
 You can declare a class using the class keyword.
+
 
 ### Inheritance
 
 We use the extends keyword to say that this class inherits from another class.
+
+
 ### polymorphism
 
 polymorphism is when a method has the same name, but a different implementation in different classes - is called polymorphism. When a method in a subclass replaces the implementation of the version in the superclass, we say that the subclass overrides the version in the superclass.
+
+
 ### encapsulation
 
 Private data properties and methods must be declared in the class declaration, and their names start with #, and they can only be called by the object's own methods.
 
+---
 
-## Object
+## Objects
 
-In JavaScript, an object is an unordered collection of key-value pairs. Each key-value pair is called a property. The key of a property can be a string. And the value of a property can be any value.
-
-Functions that are part of objects are called methods.
+An object is a collection of properties, and a property is an association between a name (or _key_) and a value. A property's value can be a function, in which case the property is known as a method.
 
 
-**initialize an object**
-Objects can be initialized using new Object(), Object.create(), or using the literal notation (initializer notation). An object initializer is a comma-delimited list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}).
+### Initialize an object
 
-**Notation**
-Dot notation = it can only accept a literal member name, not a variable value pointing to a name.
-Bracket notation
+Objexts can be created: 
 
-**Constructor**
+- Using new Object().
+```js
+const myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;
+```
+
+- Using object.create().
+
+- Using the literal notation (initializer notation). 
+```js
+const myCar = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969
+};
+```
+ 
+An object initializer is a comma-delimited list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}).
+
+
+### properties
+
+### Notation
+
+You access the properties of an object with a simple dot-notation:
+
+``` js
+objectName.propertyName
+```
+
+It can only accept a literal member name, not a variable value pointing to a name.
+
+
+#### Bracket notation
+  
+Bracket notation **gives us the ability to use variables to access values in an object**. This is especially helpful with the value of the variable changes.
+
+```js
+object['property']
+```
+
+
+### Enumerate the properties of an object
+
+There are three native ways to list/traverse object properties:
+
+-   [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loops. This method traverses all enumerable properties of an object and its prototype chain.
+-   [`Object.keys(o)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys). This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object `o`.
+-   [`Object.getOwnPropertyNames(o)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames). This method returns an array containing all own properties' names (enumerable or not) of an object `o`.
+
+
+### Constructor
+
 A constructor gets called when an object is created using the new keyword. The purpose of a constructor is to create a new object and set values for any existing object properties.
 
 constructors in JavaScript provide us with something like a class definition, enabling us to define the "shape" of an object, including any methods it contains, in a single place.
 
-**Prototype**
-Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype.
 
-**Object.create**
+### Methods
+
+A _method_ is a function associated with an object, or, put differently, a method is a property of an object that is a function. Methods are defined the way normal functions are defined, except that they have to be assigned as the property of an object.
+
+### Prototype
+
+All objects in JavaScript inherit from at least one other object. The object being inherited from is known as the prototype, and the inherited properties can be found in the `prototype` object of the constructor.
+
+The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype.
+
+
+#### Object.create
 The Object.create() method creates a new object and allows you to specify an object that will be used as the new object's prototype.
 
-**This** 
+
+### This 
+
 The this keyword refers to the current object the code is being written inside
+
+
+
+### Getters and Setters
+
+A [getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) is a method that gets the value of a specific property. 
+
+A [setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) is a method that sets the value of a specific property. 
+
+You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
+
+Getters and setters can be either
+
+-   defined using [object initializers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#object_initializers), or
+-   added later to any object at any time using a getter or setter adding method.
+
+
+### Deleting properties
+
+You can remove a non-inherited property by using the [`delete`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete) operator.
+
+```js
+delete myobj.propertie;
+```
+
 
