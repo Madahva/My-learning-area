@@ -5,7 +5,10 @@ Asynchronous programming is a technique that enables your program to start a pot
 A callback is just a function that's passed into another function, with the expectation that the callback will be called at the appropriate time.
 
 ## Promises
-A promise is an object returned by an asynchronous function, which represents the current state of the operation. At the time the promise is returned to the caller, the operation often isn't finished, but the promise object provides methods to handle the eventual success or failure of the operation.
+
+A promise is an object returned by an asynchronous function, which represents the current state of the operation. 
+
+At the time the promise is returned to the caller, the operation often isn't finished, but the promise object provides methods to handle the eventual success or failure of the operation.
 
 ## Async and await
 

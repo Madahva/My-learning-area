@@ -372,3 +372,52 @@ And with the [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ![Regular expressions methods](https://user-images.githubusercontent.com/89199369/171023747-9c8f7ffb-c281-4723-aa55-73a5374166b5.png)
 
+---
+
+### JS Modules
+
+A module in JavaScript is just **a file containing related code**. 
+
+First of all, you need to include `type="module"` in the `<script>` element, to declare this script as a module.
+
+```js
+<script type="module" src="main.js"></script>
+```
+
+In JavaScript, we use the **import** and **export** keywords to share and receive functionalities respectively across different modules. 
+
+You can only use `import` and `export` statements inside modules, not regular scripts.
+
+
+#### named exports
+
+The export keyword is used to make a variable, function, class or object accessible to other modules.
+
+A  way of exporting all the items you want to export is to use a single **export** statement at the end of your module file, followed by a comma-separated list of the features you want to export wrapped in curly braces.
+
+```js
+export { name, draw, reportArea, reportPerimeter };
+```
+
+Once you've exported some features out of your module, you need to **import** them into your script to be able to use them. 
+
+```js
+import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
+```
+
+
+#### Default exports
+
+Export default is **used to export a single class, function or primitive from a script file**.
+
+```js
+export default randomSquare;
+```
+
+We import the default function using this line:
+
+```js
+import randomSquare from './modules/square.js';
+```
+
+---
