@@ -24,14 +24,6 @@ Scripts loaded with the defer attribute will load in the order they appear on th
 
 ---
 
-## Event listener
-
-An event listener is a procedure in JavaScript that waits for an event to occur. A simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
-
-You can have multiple handlers for a single event.
-
----
-
 ## Variables
 
 A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a sentence.
@@ -51,7 +43,21 @@ JavaScript is a "dynamically typed language", which means that, unlike some othe
 
 There are a few different types of data we can store in variables.
 
----
+
+### Dynamic typing
+
+JavaScript is a _loosely typed_ and _dynamic_ language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.
+
+
+### JavaScript types
+
+The set of types in the JavaScript language consists of _primitive values_ and _objects_.
+
+
+#### Primitive value
+
+JavaScript provides six type of primitive values that includes **Number, String, Boolean, Undefined, Symbol, and BigInt**.
+
 
 ### Numbers
 
@@ -78,24 +84,6 @@ These include trigonometric, logarithmic, exponential, and other functions.
 
  you can use the **Date** object and its methods to work with dates and times in your applications. The `Date` object has a large number of methods for setting, getting, and manipulating dates.
 
----
-
-### Arrays
-
-An array is a single object that contains multiple values enclosed in square brackets and separated by commas. 
-
-An **array** is an ordered list of values that you refer to with a name and an index.
-
- The `Array` object has methods for manipulating arrays in various ways, such as joining, reversing, and sorting them. It has a property for determining the array length and other properties for use with regular expressions.
- 
-You can see the [array methods here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_methods "Permalink to Array methods")
-
-
-####  [Multi-dimensional arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#multi-dimensional_arrays "Permalink to Multi-dimensional arrays")
-
-Arrays can be nested, meaning that an array can contain another array as an element. Using this characteristic of JavaScript arrays, multi-dimensional arrays can be created.
-
----
 
 ### Strings
 
@@ -118,19 +106,33 @@ https://www.w3schools.com/jsref/jsref_obj_string.asp
 
 Template literals are enclosed by the back-tick ([grave accent](https://en.wikipedia.org/wiki/Grave_accent)) character instead of double or single quotes. Template literals can contain place holders. These are indicated by the Dollar sign and curly braces (`${expression}`).
 
----
 
 ### Booleans
 
 Booleans are true/false values — they can have two values, true or false.
 
----
 
 ### Objects
 
 In JavaScript, an object is an unordered collection of key-value pairs. Each key-value pair is called a property. The key of a property can be a string. And the value of a property can be any value.
 
 Functions that are part of objects are called methods.
+
+
+### Arrays
+
+An array is a single object that contains multiple values enclosed in square brackets and separated by commas. 
+
+An **array** is an ordered list of values that you refer to with a name and an index.
+
+ The `Array` object has methods for manipulating arrays in various ways, such as joining, reversing, and sorting them. It has a property for determining the array length and other properties for use with regular expressions.
+ 
+You can see the [array methods here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_methods "Permalink to Array methods")
+
+
+####  [Multi-dimensional arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#multi-dimensional_arrays "Permalink to Multi-dimensional arrays")
+
+Arrays can be nested, meaning that an array can contain another array as an element. Using this characteristic of JavaScript arrays, multi-dimensional arrays can be created.
 
 ---
 
@@ -232,7 +234,11 @@ The use of the ternary operator will make the code shorter in comparison to the 
 
 ## typeof
 
-The `typeof` operator returns a string indicating the type of the unevaluated operand. `operand` is the string, variable, keyword, or object for which the type is to be returned.
+The `typeof` operator can help you to find the type of your variable.
+
+The `typeof` operator returns a string indicating the type of the unevaluated operand. 
+
+`operand` is the string, variable, keyword, or object for which the type is to be returned.
 
 ---
 
@@ -340,6 +346,14 @@ You can use filter() to test each item in a collection, and create a new collect
 ### For in
 
 The `for...in` statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements.
+
+---
+
+## Event listener
+
+An event listener is a procedure in JavaScript that waits for an event to occur. A simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
+
+You can have multiple handlers for a single event.
 
 ---
 

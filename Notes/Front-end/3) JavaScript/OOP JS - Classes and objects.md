@@ -26,7 +26,11 @@ Private data properties and methods must be declared in the class declaration, a
 
 ## Objects
 
-An object is a collection of properties, and a property is an association between a name (or _key_) and a value. A property's value can be a function, in which case the property is known as a method.
+An object is a collection of properties, and a property is an association between a name (or _key_) and a value. 
+
+**Keys** are strings (or Symbols), and _values_ can be anything.
+
+A property's value can be a function, in which case the property is known as a method.
 
 
 ### Initialize an object
@@ -56,6 +60,27 @@ An object initializer is a comma-delimited list of zero or more pairs of propert
 
 
 ### properties
+
+In JavaScript, objects can be seen as a collection of properties. 
+
+With the **object literal syntax**, a limited set of properties are initialized; then properties can be added and removed. 
+
+Property values can be values of any type, including other objects, which enables building complex data structures. 
+
+Properties are identified using _key_ values. A _key_ value is either a _String value_ or a _Symbol value_.
+
+There are two types of object properties: The **data property** and the **accessor property**.
+
+
+#### Data property
+
+Associates a key with a value, and has the following attributes:
+
+
+#### Accessor property
+
+Associates a key with one of two accessor functions (`get` and `set`) to retrieve or store a value.
+
 
 ### Notation
 
@@ -136,4 +161,77 @@ You can remove a non-inherited property by using the [`delete`](https://develop
 delete myobj.propertie;
 ```
 
+
+---
+
+### Closures
+
+A **closure** is the combination of a function bundled together (enclosed) with **references** to its surrounding state (the **lexical environment**)
+
+A closure gives you access to an outer function's scope from an inner function.
+
+In JavaScript, closures are created every time a function is created, at function creation time.
+
+Using closures provides benefits that are normally associated with object-oriented programming. In particular, _data hiding_ and _encapsulation_.
+
+
+Example 1:
+
+```js
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+
+    decrement: function() {
+      changeBy(-1);
+    },
+
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+
+console.log(counter.value());  // 0.
+
+counter.increment();
+counter.increment();
+console.log(counter.value());  // 2.
+
+counter.decrement();
+console.log(counter.value());  // 1.
+```
+
+
+Example 2:
+
+```js
+function makeSizer(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  };
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
+```
+
+```html
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>
+```
 
