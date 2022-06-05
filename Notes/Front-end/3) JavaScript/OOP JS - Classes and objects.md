@@ -1,6 +1,6 @@
 # OOP
 
-Object-oriented programming is about modeling a system as a collection of objects, which each represent some particular aspect of the system. Objects contain both functions (or methods) and data.
+Object-oriented programming is about modelling a system as a collection of objects, which each represent some particular aspect of the system. Objects contain both functions (or methods) and data.
 
 
 ## Classes and instances
@@ -24,7 +24,7 @@ Private data properties and methods must be declared in the class declaration, a
 
 ---
 
-## Objects
+# Objects
 
 An object is a collection of properties, and a property is an association between a name (or _key_) and a value. 
 
@@ -33,9 +33,9 @@ An object is a collection of properties, and a property is an association betwee
 A property's value can be a function, in which case the property is known as a method.
 
 
-### Initialize an object
+## Initialize an object
 
-Objexts can be created: 
+Objects can be created: 
 
 - Using new Object().
 ```js
@@ -48,6 +48,7 @@ myCar.year = 1969;
 - Using object.create().
 
 - Using the literal notation (initializer notation). 
+
 ```js
 const myCar = {
   make: 'Ford',

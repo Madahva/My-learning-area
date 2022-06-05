@@ -4,7 +4,6 @@
 
 They abstract more complex code away from you, providing some easier syntax to use in its place.
 
----
 
 ## Browser APIs
 
@@ -41,7 +40,7 @@ The global **`fetch()`** method starts the process of fetching a resource from t
 
 The `fetch()` API can throw an error for many reasons (for example, because there was no network connectivity or the URL was malformed in some way) and we are throwing an error ourselves if the server returned an error.
 
----
+
 
 ## Third party APIs
 
@@ -51,7 +50,7 @@ To access them from JavaScript you first need to connect to the API functionalit
 
 Most APIs require you to use some kind of developer key, for reasons of security and accountability.
 
----
+
 
 ## RESTful API
 
