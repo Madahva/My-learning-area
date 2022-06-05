@@ -1,5 +1,6 @@
 # my-learning-area
-This is a repository for my practice code.
+This is a repository for my practice code and notes.
+
 
 ## This is my digital garden, where I write about the things I'm working on and share what I've learned. 😀
 
@@ -8,6 +9,7 @@ This is a repository for my practice code.
 
 - HTML
 - CSS
+- Web Design
 - JavaScript
 - React
 
