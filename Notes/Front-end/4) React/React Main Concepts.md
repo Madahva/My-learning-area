@@ -30,37 +30,73 @@ As you start to build large libraries of components, you’ll appreciate the exp
 
 **JSX** stands for **J**ava**S**cript **X**ML.
 
+JSX extends JavaScript's syntax so that HTML-like code can live alongside it.
+
 JSX is an HTML like extension to JavaScript.
+
+
+```jsx
+const heading = <h1>Mozilla Developer Network</h1>;
+```
+
 
 Just like HTML, JSX tags can have a tag names, attributes, and children. If an attribute is wrapped in curly braces, the value is a JavaScript expression.
 
 The first part of a JSX tag determines the type of the React element.
 
-When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string `'div'` or `'span'` passed to `React.createElement`. 
+Some JSX attributes are different than HTML attributes so that they don't conflict with JavaScript reserved words. For example, `class` in HTML translates to `className` in JSX. Note that multi-word attributes are camel-cased.
+
+When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>`.
 
 Capitalized types indicate that the JSX tag is referring to a React component
-
-Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)`and correspond to a component defined or imported in your JavaScript file.
 
 ---
 
 ## React Components
 
-React lets you define components as classes or functions.
+React components are pieces of code that return a React element to be rendered to the page. 
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+React components let you split the _UI_ into independent, _reusable_ pieces, and think about each piece in isolation.
 
-React components are reusable pieces of code that return a React element to be rendered to the page. Component names should always start with a capital letter. 
+React lets you define components as _classes_ or _functions_.
 
-The simplest version of React component is a plain JavaScript function that returns a React element:
+A **component** should ideally **only do one thing**. If it ends up growing, it should be decomposed into smaller **sub-components**.
+
+
+The `App` component returns a JSX expression. This expression defines what your browser ultimately renders to the DOM.
+
+The react component files consists of three main parts: 
+
+some `import` statements at the top, the `component function` in the middle, and an `export` statement at the bottom.
+
+- Components can import modules they need and must export themselves at the bottom of their files.
+- Component functions are named with `PascalCase`.
+
+
+### Import statements
+
+The `import` statements at the top of the file allow a component to use code that has been defined elsewhere. 
+
+
+### Export statements
+
+At the very bottom of the component file, the statement `export default` makes our component available to other modules.
 
 ```jsx
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
-```
 
-A **component** should ideally **only do one thing**. If it ends up growing, it should be decomposed into smaller **subcomponents**.
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hallo Welt!</h1>;
+    </div>
+  );
+}
+
+export default App;
+```
 
 ---
 
@@ -88,10 +124,14 @@ You can pass a string literal as a prop.
 
 If you already have `props` as an object, and you want to pass it in JSX, you can use `...` as a “spread” syntax to pass the whole props object
 
+
 ``` jsx
   const props = {firstName: 'Buddy', lastName: 'Bear'};
   return <Greeting {...props} />;
 ```
+
+
+-   Props are written just like attributes inside component calls and are passed into components.
 
 ---
 
@@ -176,11 +216,23 @@ It is a a development server that uses Webpack to compile React, JSX, and ES6, a
 
 The Create React App uses ESLint to test and warn about mistakes in the code.
 
+create-react-app takes one argument: the name you'd like to give your app. create-react-app uses this name to make a new directory, then creates the necessary files inside it. Make sure you `cd` to the place you'd like your app to live on your hard drive, then run the following in your terminal:
+
 To create a Create React App run the following code on your terminal:
 
 
 	npx create-react-app some-name-here
 
+
+It does several things inside the directory:
+
+-   Installs some npm packages essential to the functionality of the app.
+  
+-   Writes scripts for starting and serving the application.
+  
+-   Creates a structure of files and directories that define the basic app architecture.
+  
+-   Initializes the directory as a git repository, if you have git installed on your computer.
 
 Make sure you have Node.js 5.2 or higher. Otherwise you must install npx.
 
