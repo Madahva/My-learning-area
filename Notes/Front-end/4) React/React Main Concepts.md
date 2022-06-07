@@ -208,6 +208,137 @@ React normalizes events so that they have consistent properties across different
 
 ---
 
+## Hooks
+
+A Hook is a special function that lets you “hook into” React features. Their names always start with `use`.
+
+_Hooks_ are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+Hooks **don’t** work inside classes. But you can use them instead of writing classes.
+
+
+
+### useState
+
+`useState` is a Hook that lets you add React state to function components.
+
+- The only argument to the `useState()` Hook is the initial state.
+- It returns a pair of values: the _current state_ and a _function_ that updates it.
+
+
+**Import useState**
+
+```jsx
+  import React, { useState } from 'react';
+```
+
+
+**initialize a state:**
+
+We need to declare a new state variable by calling the `useState` Hook. It returns a pair of values (an array with two items), to which we give names. You can name your own state variables.
+
+We initialize it by passing a value as the only `useState` argument.
+
+- The first returned item is the _current state_.
+- The second returned item is itself a _function_. It lets us update the current state.
+
+
+```jsx
+  const [count, setCount] = useState(0);
+```
+
+
+This JavaScript syntax is called **array destructuring**.
+
+
+**Use a state:**
+
+```jsx
+  <p>You clicked {count} times</p>
+```
+
+
+**Updating State**
+
+```jsx
+  <button onClick={() => setCount(count + 1)}> Click me </button>
+```
+
+
+
+### The Effect Hook
+
+#### The _Effect Hook_ lets you perform side effects in function components.
+
+By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed ( our “effect”), and call it later after performing the DOM updates.
+
+Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
+
+There are two common kinds of side effects in React components: those that don’t require cleanup, and those that do.
+
+
+**Import useEffect**
+
+```jsx
+  import React, { useEffect } from 'react';
+```
+
+
+**Using Effect:**
+
+```jsx
+ useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+```
+
+
+You can tell React to _skip_ applying an effect if certain values haven’t changed between re-renders. To do so, pass an array as an optional second argument to `useEffect`.
+
+```jsx
+useEffect(() => {
+  document.title = `You clicked ${count} times`;
+}, [count]); // Only re-run the effect if count changes
+```
+
+
+**Effects Without Cleanup**
+
+Effects without cleanup phase don’t return anything.
+
+Network requests, manual DOM mutations, and logging are common examples of effects that don’t require a cleanup. We say that because we can run them and immediately forget about them.
+
+
+**Effects with Cleanup**
+
+Some effects might require cleanup so they _return a function_.
+
+For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don’t introduce a memory leak.
+
+
+
+**Only Call Hooks at the Top Level**
+
+**Don’t call Hooks inside loops, conditions, or nested functions.** Instead, always use Hooks at the top level of your React function, before any early returns. By following this rule, you ensure that Hooks are called in the same order each time a component renders
+
+
+
+### Custom Hook
+
+#### Building your own Hooks lets you extract component logic into reusable functions.
+
+A custom Hook is a JavaScript function whose name starts with `use` and that may call other Hooks.
+
+When we want to share logic between two functions components, we extract it to a third function component (a custom hook).
+
+ All we need to do is to extract some common code between two functions into a separate function. 
+ 
+- Custom Hooks are a convention that naturally follows from the design of Hooks, rather than a React feature.
+- Every time you use a custom Hook, all state and effects inside of it are fully isolated.
+
+
+---
+
 ## Create React Application
 
 Facebook has created a **Create React Application** with everything you need to build a React app.
