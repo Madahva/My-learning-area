@@ -18,6 +18,17 @@ The state contains data specific to this component that may change over time. Th
 
 ---
 
+## Rendering with iteration
+
+**Rendering List of Elements**
+
+To render an array of components in React you simply need to **pass the array into JSX by wrapping it in curly braces**, just be sure that your components each have a unique key prop because React will use this when rendering it to avoid bugs.
+
+**You should always pass a unique key to anything you render with iteration.**
+
+
+
+---
 ## Key
 
 React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree.
@@ -25,6 +36,8 @@ React supports a `key` attribute. When children have keys, React uses the key 
 A **key** is a special string attribute you need to include when creating arrays of elements. Keys help React identify which **items** have changed, are added, or are removed. Keys should be given to the elements inside an array to give the elements a stable identity.
 
 Keys only need to be **unique** among sibling elements in the same array. They don’t need to be unique across the whole application or even a single component.
+
+ You cannot use the word `key` for any other purpose.
 
 ---
 

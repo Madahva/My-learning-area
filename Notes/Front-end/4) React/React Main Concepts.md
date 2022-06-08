@@ -58,7 +58,7 @@ React components are pieces of code that return a React element to be rendered t
 
 React components let you split the _UI_ into independent, _reusable_ pieces, and think about each piece in isolation.
 
-React lets you define components as _classes_ or _functions_.
+React lets you define components as _classes_ or _functions_. 
 
 A **component** should ideally **only do one thing**. If it ends up growing, it should be decomposed into smaller **sub-components**.
 
@@ -116,7 +116,9 @@ Typically, elements are not used directly, but get returned from components.
 
 _Props_ are a way of passing data from parent to child.
 
-`props` are inputs to a React component. They are data passed down from a parent component to a child component.
+`props` are inputs to a React component. They are data passed down from a parent component to a child component. **In order to propagate information in the opposite direction**, we can use _callback functions_, also passed down as props.
+
+It's not possible to update the props a component receives; only to read them.
 
 You can pass any JavaScript expression as a prop, by surrounding it with `{}`.
 
@@ -216,11 +218,13 @@ _Hooks_ are a new addition in React 16.8. They let you use state and other Reac
 
 Hooks **don’t** work inside classes. But you can use them instead of writing classes.
 
-
+To use a React hook, we need to import it from the React module.
 
 ### useState
 
 `useState` is a Hook that lets you add React state to function components.
+
+`useState()` creates a piece of state for a component, and its only parameter determines the _initial value_ of that state. It returns two things: the state, and a function that can be used to update the state later.
 
 - The only argument to the `useState()` Hook is the initial state.
 - It returns a pair of values: the _current state_ and a _function_ that updates it.
