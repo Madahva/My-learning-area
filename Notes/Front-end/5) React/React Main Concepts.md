@@ -214,17 +214,67 @@ React normalizes events so that they have consistent properties across different
 
 A Hook is a special function that lets you “hook into” React features. Their names always start with `use`.
 
+React provides a few built-in Hooks like `useState`. You can also create your own Hooks to reuse stateful behavior between different components.
+
 _Hooks_ are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+
+-   [Basic Hooks](https://reactjs.org/docs/hooks-reference.html#basic-hooks)
+    
+    -   [`useState`](https://reactjs.org/docs/hooks-reference.html#usestate)
+    -   [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect)
+    -   [`useContext`](https://reactjs.org/docs/hooks-reference.html#usecontext)
+     
+      
+-   [Additional Hooks](https://reactjs.org/docs/hooks-reference.html#additional-hooks)
+    
+    -   [`useReducer`](https://reactjs.org/docs/hooks-reference.html#usereducer)
+    -   [`useCallback`](https://reactjs.org/docs/hooks-reference.html#usecallback)
+    -   [`useMemo`](https://reactjs.org/docs/hooks-reference.html#usememo)
+    -   [`useRef`](https://reactjs.org/docs/hooks-reference.html#useref)
+    -   [`useImperativeHandle`](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)
+    -   [`useLayoutEffect`](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+    -   [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue)
+    -   [`useDeferredValue`](https://reactjs.org/docs/hooks-reference.html#usedeferredvalue)
+    -   [`useTransition`](https://reactjs.org/docs/hooks-reference.html#usetransition)
+    -   [`useId`](https://reactjs.org/docs/hooks-reference.html#useid)
+      
+      
+-   [Library Hooks](https://reactjs.org/docs/hooks-reference.html#library-hooks)
+    
+    -   [`useSyncExternalStore`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
+    -   [`useInsertionEffect`](https://reactjs.org/docs/hooks-reference.html#useinsertioneffect)
+
 
 Hooks **don’t** work inside classes. But you can use them instead of writing classes.
 
 To use a React hook, we need to import it from the React module.
 
-### useState
 
-`useState` is a Hook that lets you add React state to function components.
+**Only Call Hooks at the Top Level**
+
+**Don’t call Hooks inside loops, conditions, or nested functions.** Instead, always use Hooks at the top level of your React function, before any early returns. By following this rule, you ensure that Hooks are called in the same order each time a component renders
+
+
+
+### useState()
+
+`useState` is a Hook that lets you add React state to function components. The state contains data specific to this component that may change over time. The state is user-defined.
+
+
+A component needs `state` when some data associated with it changes over time. For example, a `Checkbox` component might need `isChecked` in its state.
+
+
+A component cannot change its `props`, but it can change its `state`; The `state` is managed by the component itself. 
+
 
 `useState()` creates a piece of state for a component, and its only parameter determines the _initial value_ of that state. It returns two things: the state, and a function that can be used to update the state later.
+
+
+```jsx
+const [state, setState] = useState(initialState);
+```
+
 
 - The only argument to the `useState()` Hook is the initial state.
 - It returns a pair of values: the _current state_ and a _function_ that updates it.
@@ -318,12 +368,6 @@ Network requests, manual DOM mutations, and logging are common examples of effec
 Some effects might require cleanup so they _return a function_.
 
 For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don’t introduce a memory leak.
-
-
-
-**Only Call Hooks at the Top Level**
-
-**Don’t call Hooks inside loops, conditions, or nested functions.** Instead, always use Hooks at the top level of your React function, before any early returns. By following this rule, you ensure that Hooks are called in the same order each time a component renders
 
 
 

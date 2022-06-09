@@ -1,23 +1,3 @@
-## Hooks
-
-Hooks are functions that let you “hook into” React state and lifecycle features from function components.
-
-React provides a few built-in Hooks like `useState`. You can also create your own Hooks to reuse stateful behavior between different components.
-
----
-
-## State
-
-A component needs `state` when some data associated with it changes over time. For example, a `Checkbox` component might need `isChecked` in its state.
-
-The most important difference between `state` and `props` is that `props` are passed from a parent component, but `state` is managed by the component itself. 
-
-A component cannot change its `props`, but it can change its `state`.
-
-The state contains data specific to this component that may change over time. The state is user-defined.
-
----
-
 ## Rendering with iteration
 
 **Rendering List of Elements**
@@ -26,9 +6,8 @@ To render an array of components in React you simply need to **pass the array i
 
 **You should always pass a unique key to anything you render with iteration.**
 
-
-
 ---
+
 ## Key
 
 React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree.
@@ -110,3 +89,4 @@ Suspense lets components “**wait**” for something before rendering.
 Today, Suspense only supports one use case: loading components dynamically with [`React.lazy`](https://reactjs.org/docs/code-splitting.html#reactlazy).
 
 `React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren’t used during the initial render.
+
