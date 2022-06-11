@@ -9,8 +9,9 @@ This is a repository for my practice code and notes (my future Blog website).
 
 - HTML
 - CSS
-- Web Design
 - JavaScript
+- Web Design
+- Git
 - React
 - TypeScript
 
