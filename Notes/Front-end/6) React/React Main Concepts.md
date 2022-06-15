@@ -257,7 +257,9 @@ To use a React hook, we need to import it from the React module.
 
 
 
-### useState()
+### `useState()`
+
+**Returns a stateful value, and a function to update it.**
 
 `useState` is a Hook that lets you add React state to function components. The state contains data specific to this component that may change over time. The state is user-defined.
 
@@ -347,7 +349,10 @@ There are two common kinds of side effects in React components: those that don�
 ```
 
 
+By default, effects run after every completed render, but you can choose to fire them [only when certain values have changed](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect).
+
 You can tell React to _skip_ applying an effect if certain values haven’t changed between re-renders. To do so, pass an array as an optional second argument to `useEffect`.
+
 
 ```jsx
 useEffect(() => {
@@ -371,6 +376,16 @@ For example, **we might want to set up a subscription** to some external data 
 
 
 
+### `useRef()`
+
+```jsx
+const refContainer = useRef(initialValue);
+```
+
+`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.
+
+
+
 ### Custom Hook
 
 #### Building your own Hooks lets you extract component logic into reusable functions.
@@ -383,6 +398,114 @@ When we want to share logic between two functions components, we extract it to a
  
 - Custom Hooks are a convention that naturally follows from the design of Hooks, rather than a React feature.
 - Every time you use a custom Hook, all state and effects inside of it are fully isolated.
+
+
+
+### `useReducer()`
+
+An alternative to `useState`. Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method. 
+
+`useReducer` is usually preferable to `useState` when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. `useReducer` also lets you optimize performance for components that trigger deep updates because [you can pass `dispatch` down instead of callbacks](https://reactjs.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
+
+
+**There are two different ways to initialize `useReducer` state.** 
+
+
+The simplest way is to pass the initial state as a second argument:
+
+```jsx
+const [state, dispatch] = useReducer(
+    reducer,
+    {count: initialCount}  );
+```
+
+
+You can also create the initial state lazily. To do this, you can pass an `init` function as the third argument. The initial state will be set to `init(initialArg)`.
+
+```jsx
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+```
+
+
+It lets you extract the logic for calculating the initial state outside the reducer. This is also handy for resetting the state later in response to an action.
+
+
+
+### `useLayoutEffect()`
+
+The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
+
+Prefer the standard `useEffect` when possible to avoid blocking visual updates.
+
+
+
+### `useDeferredValue()`
+
+`useDeferredValue` accepts a value and returns a new copy of the value that will defer to more urgent updates. If the current render is the result of an urgent update, like user input, React will return the previous value and then render the new value after the urgent render has completed.
+
+```jsx
+const deferredValue = useDeferredValue(value);
+```
+
+The benefits to using `useDeferredValue` is that React will work on the update as soon as other work finishes (instead of waiting for an arbitrary amount of time) deferred values can suspend without triggering an unexpected fallback for existing content.
+
+`useDeferredValue` only defers the value that you pass to it. If you want to prevent a child component from re-rendering during an urgent update, you must also memoize that component with `React.memo` or `React.useMemo`.
+
+
+
+### `useContext()`
+
+Accepts a context object and returns the current context value for that context.
+
+A component calling `useContext` will always re-render when the context value changes.
+
+
+```jsx
+const value = useContext(MyContext);
+```
+
+
+If re-rendering the component is expensive, you can [optimize it by using memoization](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
+
+
+
+### `useCallback()`
+
+Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) callback.
+
+Pass an inline callback and an array of dependencies.  `useCallback` will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
+
+
+```jsx
+const memoizedCallback = useCallback(
+  () => {
+    doSomething(a, b);
+  },
+  [a, b],
+);
+```
+
+
+`useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
+
+
+
+### `useMemo()`
+
+Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) value.
+
+Pass a “create” function and an array of dependencies. `useMemo` will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
+
+
+```jsx
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+
+**You may rely on `useMemo` as a performance optimization, not as a semantic guarantee.**
+
+If no array is provided, a new value will be computed on every render.
+
 
 
 ---
