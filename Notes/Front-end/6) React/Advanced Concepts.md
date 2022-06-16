@@ -22,7 +22,7 @@ Keys only need to be **unique** among sibling elements in the same array. They d
 
 ## Context
 
-Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language
+Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
 
 Context is primarily used when some data needs to be accessible by _many_ components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
 
@@ -82,7 +82,7 @@ By default, React includes many helpful warnings. These warnings are very useful
 
 ---
 
-### Suspense
+## Suspense
 
 Suspense lets components “**wait**” for something before rendering. 
 
@@ -90,3 +90,107 @@ Today, Suspense only supports one use case: loading components dynamically with
 
 `React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren’t used during the initial render.
 
+---
+
+## Testing
+
+There are a few ways to test React components. Broadly, they divide into two categories:
+
+-   **Rendering component trees** in a simplified test environment and asserting on their output.
+-   **Running a complete app** in a realistic browser environment (also known as “end-to-end” tests).
+
+
+### Recommended Tools for rendering component trees
+
+**[Jest](https://facebook.github.io/jest/)** is a JavaScript test runner that lets you access the DOM via [`jsdom`](https://reactjs.org/docs/testing-environments.html#mocking-a-rendering-surface). While jsdom is only an approximation of how the browser works, it is often good enough for testing React components. Jest provides a great iteration speed combined with powerful features like mocking [modules](https://reactjs.org/docs/testing-environments.html#mocking-modules) and [timers](https://reactjs.org/docs/testing-environments.html#mocking-timers) so you can have more control over how the code executes.
+
+**[React Testing Library](https://testing-library.com/react)** is a set of helpers that let you test React components without relying on their implementation details. This approach makes refactoring a breeze and also nudges you towards best practices for accessibility. Although it doesn’t provide a way to “shallowly” render a component without its children, a test runner like Jest lets you do this by [mocking](https://reactjs.org/docs/testing-recipes.html#mocking-modules).
+
+
+### Test runners
+
+Test runners like [Jest](https://jestjs.io/), [mocha](https://mochajs.org/), [ava](https://github.com/avajs/ava) let you write test suites as regular JavaScript, and run them as part of your development process. Additionally, test suites are run as part of continuous integration.
+
+-   Jest is widely compatible with React projects, supporting features like mocked [modules](https://reactjs.org/docs/testing-environments.html#mocking-modules) and [timers](https://reactjs.org/docs/testing-environments.html#mocking-timers), and [`jsdom`](https://reactjs.org/docs/testing-environments.html#mocking-a-rendering-surface) support. **If you use Create React App, [Jest is already included out of the box](https://facebook.github.io/create-react-app/docs/running-tests) with useful defaults.**
+-   Libraries like [mocha](https://mochajs.org/#running-mocha-in-the-browser) work well in real browser environments, and could help for tests that explicitly need it.
+-   End-to-end tests are used for testing longer flows across multiple pages, and require a [different setup](https://reactjs.org/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests).
+
+
+### End-to-end tests
+
+End-to-end tests are useful for testing longer workflows, especially when they’re critical to your business (such as payments or signups). For these tests, you’d probably want to test how a real browser renders the whole app, fetches data from the real API endpoints, uses sessions and cookies, navigates between different links. You might also likely want to make assertions not just on the DOM state, but on the backing data as well (e.g. to verify whether the updates have been persisted to the database).
+
+In this scenario, you would use a framework like [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) or a library like [Puppeteer](https://pptr.dev/) so you can navigate between multiple routes and assert on side effects not just in the browser, but potentially on the backend as well.
+
+---
+
+### CSS in React
+
+The discussion about CSS-in-JS, and whether or not to use it in your projects, has been active for nearly half a decade now.
+
+“CSS-in-JS” refers to a pattern where CSS is composed using JavaScript instead of defined in external files.
+
+This _functionality is not a part of React, but provided by third-party libraries._ React does not have an opinion about how styles are defined; if in doubt, a good starting point is to define your styles in a separate `*.css` file as usual and refer to them using [`className`](https://reactjs.org/docs/dom-elements.html#classname).
+
+---
+
+## Animations 
+
+React can be used to power animations. See [React Transition Group](https://reactcommunity.org/react-transition-group/), [React Motion](https://github.com/chenglou/react-motion), [React Spring](https://github.com/react-spring/react-spring), or [Framer Motion](https://framer.com/motion), for example.
+
+---
+
+## File structure 
+
+React doesn’t have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+
+
+#### Grouping by features or routes
+
+One common way to structure projects is to locate CSS, JS, and tests together inside folders grouped by feature or route.
+
+```uwu
+common/
+  Avatar.js
+  Avatar.css
+  APIUtils.js
+  APIUtils.test.js
+feed/
+  index.js
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  FeedAPI.js
+profile/
+  index.js
+  Profile.js
+  ProfileHeader.js
+  ProfileHeader.css
+  ProfileAPI.js
+```
+
+The definition of a “feature” is not universal, and it is up to you to choose the granularity.
+
+
+#### Grouping by file type
+
+Another popular way to structure projects is to group similar files together, for example:
+
+```
+api/
+  APIUtils.js
+  APIUtils.test.js
+  ProfileAPI.js
+  UserAPI.js
+components/
+  Avatar.js
+  Avatar.css
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  Profile.js
+  ProfileHeader.js
+  ProfileHeader.css
+```

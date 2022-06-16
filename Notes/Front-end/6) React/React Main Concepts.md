@@ -48,7 +48,25 @@ Some JSX attributes are different than HTML attributes so that they don't confli
 
 When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>`.
 
-Capitalized types indicate that the JSX tag is referring to a React component
+Capitalized types indicate that the JSX tag is referring to a React component.
+
+
+### Comments in JSX
+
+```jsx
+<div>
+  {/* Comment goes here */}
+  Hello, {name}!
+</div>
+```
+
+```jsx
+<div>
+  {/* It also works 
+  for multi-line comments. */}
+  Hello, {name}! 
+</div>
+```
 
 ---
 
