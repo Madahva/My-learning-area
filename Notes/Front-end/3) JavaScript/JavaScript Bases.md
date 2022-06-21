@@ -12,6 +12,15 @@ JavaScript is a scripting language that enables you to create dynamically updati
 
 A very common use of JavaScript is to dynamically modify HTML and CSS to update a user interface, via the Document Object Model API.
 
+
+## ECMAScript
+
+__ECMAScript__ is a JavaScript _standard_ meant to ensure the interoperability of web pages across different web browsers. It is standardized by Ecma International according to the document ECMA-262. ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.
+
+The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.
+
+ECMA-262 only specifies language syntax and semantics of the core _API_, such as Array and Function, while valid implementations of JavaScript add their own functionality like input/output or file system handling.
+
 ---
 
 # How to insert JavaScript in HTML?
@@ -32,11 +41,42 @@ Scripts loaded with the defer attribute will load in the order they appear on th
 
 A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a sentence.
 
-New variables in JavaScript are declared using the keywords: **let** or **const**.
+There are three ways of defining your variables in JavaScript : `var`, `let`, and `const`.
 
-Variables are basically names for values (such as numbers, or strings of text). Create a variable with the keyword **let** followed by a name for your variable.
+Variables are basically names for values (such as numbers, or strings of text). 
+
+
+### Var 
+
+If you use `var` outside of a function, it belongs to the global scope.
+
+If you use `var` inside of a function, it belongs to that function.
+
+If you use `var` inside of a block, i.e. a for loop, the variable is still available outside of that block.
+
+`var` has a _function_ scope, not a _block_ scope.
+
+```js
+var x = 5.6;
+```
+
+
+### Let
 
 **`let`** allows you to declare block-level variables. The declared variable is available from the _block_ it is enclosed in.
+
+`let` is the block scoped version of `var`, and is limited to the block (or expression) where it is defined.
+
+If you use `let` inside of a block, i.e. a for loop, the variable is only available inside of that loop.
+
+`let` has a _block_ scope.
+
+```js
+let x = 5.6;
+```
+
+
+### Constant
 
 Constants are also used to name values, but unlike variables, you can't change the value once set. Create a constant with the keyword **const** followed by a name for the constant.
 
@@ -45,6 +85,25 @@ Constants are also used to name values, but unlike variables, you can't change t
 You can assign a value to your variable or constant with an equal sign (=) followed by the value you want to give it.
 
 Use **const** when you can, and use let **when** you have to.
+
+```js
+const x = 5.6;
+```
+
+`const` has a _block_ scope.
+
+It does not define a constant value. It defines a constant reference to a value.
+
+Because of this you can NOT:
+
+-   Reassign a constant value
+-   Reassign a constant array
+-   Reassign a constant object
+
+But you CAN:
+
+-   Change the elements of constant array
+-   Change the properties of constant object
 
 
 ## Dynamic typing
@@ -137,9 +196,67 @@ arr[2]   // three
 The index of the elements begins with zero.
 
 
+**Destructuring**
+
+Destructuring makes it easy to extract only what is needed.
+
+Assigning array items to a variable with destructuring:
+
+
+```js
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+const [car, truck, suv] = vehicles;
+```
+
+When destructuring arrays, the order that variables are declared is important.
+
+Destructuring comes in handy when a function returns an array:
+
+
+```js
+function calculate(a, b) {
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  return [add, subtract, multiply, divide];
+}
+
+const [add, subtract, multiply, divide] = calculate(4, 7);
+```
+
+
+**Spread Operator**
+
+The JavaScript spread operator (`...`) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+
+```js
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+```
+
+
+The spread operator is often used in combination with destructuring.
+
+
+```js
+
+//Assign the first and second items from `numbers` to variables and put the rest in an array:
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const [one, two, ...rest] = numbers;
+```
+
+
 The `Array` object has _methods_ for manipulating arrays in various ways, such as joining, reversing, and sorting them. 
 
-You can see the [array methods here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_methods "Permalink to Array methods") and [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+There are many JavaScript array methods. You can see the [array methods here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_methods "Permalink to Array methods") and [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
  
 It has a _property_ for determining the array length and other properties for use with regular expressions.
  
@@ -188,9 +305,19 @@ The rest parameter syntax allows us to represent an indefinite number of argumen
 
 **Arrow function**
 
+```jsx
+hello = () => "Hello World!";
+```
+
 It allows you to create functions in a cleaner way compared to regular functions. 
 
 Arrow functions are best for callbacks or methods like map, reduce, or forEach.
+
+The handling of `this` is also different in arrow functions compared to regular functions. In short, with arrow functions there is no binding of `this`.
+
+In regular functions the `this` keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions, the `this` keyword _always_ represents the object that defined the arrow function.
 
 
 ##### Scopes
@@ -301,6 +428,8 @@ In addition to the comparison operators, which can be used on string values, the
 
 
 ## Ternary operator
+
+The ternary operator is a simplified conditional operator like `if` / `else`.
 
 The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark ( ? ), then an expression to execute if the condition is truthy followed by a colon ( : ), and finally the expression to execute if the condition is falsy.
 
@@ -450,18 +579,26 @@ And with the [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 A module in JavaScript is just **a file containing related code**. 
 
+JavaScript modules allow you to break up your code into separate files. This makes it easier to maintain the code-base.
+
+You can export a function or variable from any file.
+
 First of all, you need to include `type="module"` in the `<script>` element, to declare this script as a module.
 
 ```js
 <script type="module" src="main.js"></script>
 ```
 
+ES Modules rely on the `import` and `export` statements.
+
 In JavaScript, we use the **import** and **export** keywords to share and receive functionalities respectively across different modules. 
 
 You can only use `import` and `export` statements inside modules, not regular scripts.
 
 
- **named exports**
+There are two types of exports: Named and Default.
+
+ **Named exports**
 
 The export keyword is used to make a variable, function, class or object accessible to other modules.
 
@@ -492,5 +629,10 @@ We import the default function using this line:
 ```js
 import randomSquare from './modules/square.js';
 ```
+
+
+You can import modules into a file in two ways, based on if they are named exports or default exports.
+
+Named exports must be destructured using curly braces. Default exports do not.
 
 ---
