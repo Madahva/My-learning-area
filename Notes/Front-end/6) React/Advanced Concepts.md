@@ -2,6 +2,16 @@
 
 **Rendering List of Elements**
 
+In React, `map()` can be used to generate lists.
+
+The `.map()` method allows you to run a function on each item in the array, returning a new array as the result.
+
+```jsx
+const myArray = ['apple', 'banana', 'orange'];
+
+const myList = myArray.map((item) => <p>{item}</p>)
+```
+
 To render an array of components in React you simply need to **pass the array into JSX by wrapping it in curly braces**, just be sure that your components each have a unique key prop because React will use this when rendering it to avoid bugs.
 
 **You should always pass a unique key to anything you render with iteration.**
