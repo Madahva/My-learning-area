@@ -2,7 +2,10 @@
 
 **Rendering List of Elements**
 
-In React, `map()` can be used to generate lists.
+In React, you will render lists with some type of loop.
+
+The JavaScript `map()` array method is generally the preferred method.
+
 
 The `.map()` method allows you to run a function on each item in the array, returning a new array as the result.
 
@@ -22,7 +25,7 @@ To render an array of components in React you simply need to **pass the array i
 
 React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree.
 
-A **key** is a special string attribute you need to include when creating arrays of elements. Keys help React identify which **items** have changed, are added, or are removed. Keys should be given to the elements inside an array to give the elements a stable identity.
+Keys allow React to keep track of elements. This way, if an item is updated or removed, only that item will be re-rendered instead of the entire list.
 
 Keys only need to be **unique** among sibling elements in the same array. They don’t need to be unique across the whole application or even a single component.
 

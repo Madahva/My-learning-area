@@ -15,6 +15,13 @@ React uses **Babel** to convert **JSX** into JavaScript.
 **Babel** is a JavaScript compiler that can translate markup or programming languages into JavaScript.
 
 
+### The Root Node
+
+The root node is the HTML element where you want to display the result.
+
+It is like a _container_ for content managed by React.
+
+
 ### React creates a VIRTUAL DOM in memory.
 
 Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
@@ -34,24 +41,37 @@ JSX extends JavaScript's syntax so that HTML-like code can live alongside it.
 
 JSX is an HTML like extension to JavaScript.
 
+JSX makes it easier to write and add HTML in React.
+
 
 ```jsx
 const heading = <h1>Mozilla Developer Network</h1>;
 ```
 
 
+### Expressions in JSX
+
 Just like HTML, JSX tags can have a tag names, attributes, and children. If an attribute is wrapped in curly braces, the value is a JavaScript expression.
 
-The first part of a JSX tag determines the type of the React element.
+The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result.
+
+
+```jsx
+const myElement = <h1>React is {5 + 5} times better with JSX</h1>;
+```
+
 
 Some JSX attributes are different than HTML attributes so that they don't conflict with JavaScript reserved words. For example, `class` in HTML translates to `className` in JSX. Note that multi-word attributes are camel-cased.
 
-When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>`.
 
-Capitalized types indicate that the JSX tag is referring to a React component.
+**The first part of a JSX tag determines the type of the React element:**
+
+- When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>`.
+- Capitalized types indicate that the JSX tag is referring to a React component.
 
 
 ### Comments in JSX
+
 
 ```jsx
 <div>
@@ -59,6 +79,7 @@ Capitalized types indicate that the JSX tag is referring to a React component.
   Hello, {name}!
 </div>
 ```
+
 
 ```jsx
 <div>
@@ -68,53 +89,72 @@ Capitalized types indicate that the JSX tag is referring to a React component.
 </div>
 ```
 
+
 ---
 
 ## React Components
 
-React components are pieces of code that return a React element to be rendered to the page. 
-
 React components let you split the _UI_ into independent, _reusable_ pieces, and think about each piece in isolation.
+
+React components are pieces of code that return a React element to be rendered to the page. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
 
 React lets you define components as _classes_ or _functions_. 
 
-A **component** should ideally **only do one thing**. If it ends up growing, it should be decomposed into smaller **sub-components**.
 
+A **component** should ideally **only do one thing**. If it ends up growing, it should be decomposed into smaller **sub-components**.
 
 The `App` component returns a JSX expression. This expression defines what your browser ultimately renders to the DOM.
 
-The react component files consists of three main parts: 
 
-some `import` statements at the top, the `component function` in the middle, and an `export` statement at the bottom.
+### Create a React Component
 
-- Components can import modules they need and must export themselves at the bottom of their files.
-- Component functions are named with `PascalCase`.
+- When creating a React component, the component's name _MUST_ start with an upper case letter.
 
+- Since React is all about re-using code, it is recommended to split your components into separate files.
 
-### Import statements
-
-The `import` statements at the top of the file allow a component to use code that has been defined elsewhere. 
-
-
-### Export statements
-
-At the very bottom of the component file, the statement `export default` makes our component available to other modules.
 
 ```jsx
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Tittle from './components/Tittle.jsx';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hallo Welt!</h1>;
+      <Tittle />
     </div>
   );
 }
 
 export default App;
 ```
+
+
+**The react component files consists of three main parts:** 
+
+Some `import` statements at the top, the `component function` in the middle, and an `export` statement at the bottom.
+
+- Components can import modules they need and must export themselves at the bottom of their files.
+- Component functions are named with `PascalCase`.
+
+
+#### Import statements
+
+The `import` statements at the top of the file allow a component to use code that has been defined elsewhere. 
+
+
+#### Export statements
+
+At the very bottom of the component file, the statement `export default` makes our component available to other modules.
+
+
+### You can conditionally render components
+
+**There are several ways to do this.**
+
+- You can use the `if` JavaScript operator to decide which component to render.
+- You can conditionally render a React component by using the `&&` operator.
+- Using a ternary operator.
 
 ---
 
@@ -132,15 +172,36 @@ Typically, elements are not used directly, but get returned from components.
 
 ## Props
 
-_Props_ are a way of passing data from parent to child.
+**_Props_ are a way of passing data from parent to child.**
+
+- Props are arguments passed into React components.
+- Props are passed to components via HTML attributes.
+- `props` stands for properties.
+
 
 `props` are inputs to a React component. They are data passed down from a parent component to a child component. **In order to propagate information in the opposite direction**, we can use _callback functions_, also passed down as props.
 
-It's not possible to update the props a component receives; only to read them.
+- It's not possible to update the props a component receives; only to read them.
+  
+- The component receives the argument as a `props` object.
 
-You can pass any JavaScript expression as a prop, by surrounding it with `{}`.
+- You can pass any JavaScript expression as a prop, by surrounding it with `{}`.
 
-You can pass a string literal as a prop.
+- You can pass a string literal as a prop.
+
+
+#### Add a props to a element:
+```jsx
+const myElement = <Car brand="Ford" />;
+```
+
+#### Use the props in a component:
+```jsx
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+```
+
 
 If you already have `props` as an object, and you want to pass it in JSX, you can use `...` as a “spread” syntax to pass the whole props object
 
@@ -151,7 +212,7 @@ If you already have `props` as an object, and you want to pass it in JSX, you 
 ```
 
 
--   Props are written just like attributes inside component calls and are passed into components.
+**Props are like function arguments, and you send them into the component as attributes.**
 
 ---
 
@@ -199,14 +260,32 @@ Style keys are camelCased in order to be consistent with accessing the propertie
 You may also use **custom attributes** as long as they’re fully **lowercase**.
 
 
-### Events
+### React Events
 
-Handling events with React elements has some syntactic differences:
+Just like HTML DOM events, React can perform actions based on user events.
+
+
+**Handling events with React elements has some syntactic differences:**
 
 -   React event handlers are named using camelCase, rather than lowercase.
 -   With JSX you pass a function as the event handler, rather than a string.
+- To pass an argument to an event handler, use an arrow function.
 
-React normalizes events so that they have consistent properties across different browsers.
+
+```jsx
+function AlertBtn() {
+  const showAlert = (a) => {
+    alert(a);
+  }
+
+  return (
+    <button onClick={() => showAlert("HI")}>Display an alert</button>
+  );
+}
+```
+
+
+**There are a wide variety of events in React:**
 
 -   [Clipboard Events](https://reactjs.org/docs/events.html#clipboard-events)
 -   [Composition Events](https://reactjs.org/docs/events.html#composition-events)
