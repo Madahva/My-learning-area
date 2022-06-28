@@ -475,12 +475,18 @@ For example, **we might want to set up a subscription** to some external data 
 
 ### `useRef()`
 
+The `useRef` Hook allows you to persist values between renders.
+
+It can be used to store a mutable value that does not cause a re-render when updated.
+
+It can be used to access a DOM element directly.
+
 ```jsx
 const refContainer = useRef(initialValue);
 ```
 
-`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.
 
+`useRef()` only returns one item. It returns an Object called `current`.
 
 
 ### Custom Hook
@@ -578,7 +584,7 @@ To do this without Context, we will need to pass the state as "props" through ea
 
 ### `useCallback()`
 
-Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) callback.
+The React `useCallback` Hook returns a [memoized](https://en.wikipedia.org/wiki/Memoization) callback function.
 
 Pass an inline callback and an array of dependencies.  `useCallback` will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
 
@@ -595,6 +601,7 @@ const memoizedCallback = useCallback(
 
 `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
 
+The `useCallback` and `useMemo` Hooks are similar. The main difference is that `useMemo` returns a memoized _value_ and `useCallback` returns a memoized _function_.
 
 
 ### `useMemo()`
