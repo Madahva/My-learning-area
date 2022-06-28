@@ -552,6 +552,10 @@ The benefits to using `useDeferredValue` is that React will work on the update
 
 ### `useContext()`
 
+**React Context is a way to manage state globally.**
+
+It can be used together with the `useState` Hook to share state between deeply nested components more easily than with `useState` alone.
+
 Accepts a context object and returns the current context value for that context.
 
 A component calling `useContext` will always re-render when the context value changes.
@@ -564,6 +568,12 @@ const value = useContext(MyContext);
 
 If re-rendering the component is expensive, you can [optimize it by using memoization](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
 
+
+**Case of use**
+
+State should be held by the highest parent component in the stack that requires access to the state.
+
+To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
 
 
 ### `useCallback()`
@@ -589,7 +599,10 @@ const memoizedCallback = useCallback(
 
 ### `useMemo()`
 
-Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) value.
+Using `memo` will cause React to skip rendering a component if its props have not changed.
+
+- This can improve performance.
+- Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) value.
 
 Pass a “create” function and an array of dependencies. `useMemo` will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
 

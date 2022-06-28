@@ -137,7 +137,62 @@ In this scenario, you would use a framework like [Cypress](https://www.cypress.
 
 ---
 
-### CSS in React
+## React CSS Styling 
+
+There are many ways to style React with CSS:
+
+-   Inline styling
+-   CSS stylesheets
+-   CSS Modules
+
+
+### Inline Styling
+
+To style an element with the inline style attribute, the value must be a JavaScript object:
+
+
+```jsx
+const Header = () => {
+  return (
+    <>
+      <h1 style={{color: "red"}}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+
+Since the inline CSS is written in a JavaScript object, properties with hyphen separators, like `background-color`, must be written with camel case syntax
+
+You can also create an object with styling information, and refer to it in the style attribute.
+
+
+### CSS Stylesheet
+
+You can write your CSS styling in a separate file, just save the file with the `.css` file extension, and import it in your application.
+
+
+### CSS Modules
+
+CSS Modules are convenient for components that are placed in separate files.
+
+The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+You just need to create the CSS module with the `.module.css` extension, example: `my-style.module.css`, and import it in your component.
+
+
+```jsx
+import styles from './my-style.module.css'; 
+
+const Car = () => {
+  return <h1 className={styles.bigblue}>Hello Car!</h1>;
+}
+
+export default Car;
+```
+
+
+### CSS-in-JS
 
 The discussion about CSS-in-JS, and whether or not to use it in your projects, has been active for nearly half a decade now.
 
