@@ -137,4 +137,70 @@ doc/**/*.pdf
 ```
 
 
-# Pág. 37
+### Git Commit 
+
+You can type your commit message inline with the _commit_ command by specifying it after a _-m_ flag, like this:
+
+```
+$ git commit -m "Story 182: fix benchmarks for speed"
+```
+
+
+Adding the _-a_ option to the _git commit_ command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the _git add_ part:
+
+
+For an even more explicit reminder of what you’ve modified, you can pass the _-v_ option to _git commit_. Doing so also puts the diff of your change in the editor so you can see exactly what changes you’re committing.
+
+
+### Remove from Staging Area
+
+To keep the file in your working tree but remove it from your staging area use:
+
+```
+$ git rm --cached FILE
+```
+
+This is particularly useful if you forgot to add something to your .gitignore file and accidentally staged it.
+
+
+### Commit History
+
+_git log_ lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first.
+
+
+**Options**
+One of the more helpful options is _-p_ or _--patch_, which shows the difference (the patch output) introduced in each commit. 
+
+You can also limit the number of log entries displayed, such as using _-2_ to show only the last two entries.
+
+If you want to see some abbreviated stats for each commit, you can use the _--stat_ option.
+
+Another really useful option is _--pretty_. This option changes the log output to formats other than the default. The _oneline_ value for this option prints each commit on a single line, which is useful if you’re looking at a lot of commits
+
+The _oneline_ option value is useful with another _log_ option called _--graph_. This option adds a nice little ASCII graph showing your branch and merge history.
+
+```
+$ git log --pretty=oneline --graph
+```
+
+The _-S_ option takes a string and shows only those commits that changed the number of occurrences of that string; only show commits adding or removing code matching the string.
+
+
+### Amend Commits
+
+One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the _--amend_ option.
+
+```
+$ git commit -m 'Initial commit' 
+$ git add forgotten_file 
+$ git commit --amend
+```
+
+
+
+
+
+
+
+
+# Pág. 54
