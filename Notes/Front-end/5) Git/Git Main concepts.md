@@ -197,10 +197,52 @@ $ git commit --amend
 ```
 
 
+### Unmodify changes
+
+With _git restore_ any local changes you made to that file are gone — Git just replaced that file with the last staged or committed version.
+
+ 
+### Adding Remote Repositories
+
+To add a new remote Git repository as a shortname you can reference easily, run:
+
+```
+$ git remote add <shortname> <url>
+```
+
+
+### Showing Your Remotes
+
+To see which remote servers you have configured, you can run the _git remote_ command. It lists the shortnames of each remote handle you’ve specified.
+
+You can also specify _-v_, which shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote:
+
+```
+$ git remote -v
+```
+
+
+### Pulling from Your Remotes
+
+You can use the _git pull_ command,  it fetches data from the **server** you originally cloned from and automatically tries to **merge** it into the code you’re currently working on.
+
+
+### Pushing to Your Remotes
+
+To push any commits you’ve done back up to the server we use the command _git push_
+
+```
+$ git push origin master
+```
 
 
 
 
 
 
-# Pág. 54
+# Pág. 69
+Chapter 1 --DONE
+Chapter 2 --DONE
+Chapter 3 
+Chapter 6
+Appendix C
