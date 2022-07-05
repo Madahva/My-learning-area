@@ -185,6 +185,10 @@ $ git log --pretty=oneline --graph
 
 The _-S_ option takes a string and shows only those commits that changed the number of occurrences of that string; only show commits adding or removing code matching the string.
 
+By default, _git log_ will only show commit history below the branch you’ve checked out. 
+
+To show commit history for the desired branch you have to explicitly specify it: _git log <branch_Name>_. To show all of the branches, add _--all_ to your _git log_ command.
+
 
 ### Amend Commits
 
@@ -236,11 +240,100 @@ $ git push origin master
 ```
 
 
+## Git Branching
 
 
+### Creating a New Branch
+
+You do this with the git branch command: 
+
+```
+$ git branch testing
+```
 
 
-# Pág. 69
+### Switching Branches 
+
+To switch to an existing branch, you run the git checkout command. 
+
+```
+$ git checkout <branch_name>
+```
+
+
+**Switching branches changes files in your working directory** 
+
+It’s important to note that when you switch branches in Git, files in your working directory will change. If you switch to an older branch, your working directory will be reverted to look like it did the last time you committed on that branch.
+
+
+**Creating a new branch and switching to it at the same time** 
+
+To create and  switch to a new branch at the same time use :
+
+```
+$ git checkout -b <branch_name>
+```
+
+
+### Merge a Branch
+
+All you have to do is **check out** the branch you wish to merge into and then run the _git merge_ command:
+
+```
+$ git merge master
+```
+
+
+**Merge Conflicts**
+
+If you want to use a graphical tool to resolve merge issues, you can run _git mergetool_, which fires up an appropriate visual merge tool and walks you through the conflicts.
+
+
+### Delete a Branch
+
+You can delete a branch with the _-d_ option to _git branch_:
+
+```
+$ git branch -d <branch_name>
+```
+
+
+###  List branches
+
+The _git branch_ command does more than just create and delete branches. If you run it with no arguments, you get a simple listing of your current branches.
+
+To see the last commit on each branch, you can run git branch _-v_.
+
+The useful _--merged_ and _--no-merged_ options can filter this list to branches that you have or have not yet merged into the branch you’re currently on.
+
+
+### Change branch name
+
+Rename the branch locally with the git branch _--move command_:
+
+```
+$ git branch --move bad-branch-name corrected-branch-name
+```
+
+This replaces your **bad-branch-name** with **corrected-branch-name**, but this change is only local. 
+
+To let others see the corrected branch on the remote, push it: 
+
+```
+$ git push --set-upstream origin corrected-branch-name
+```
+
+
+The branch with the bad name is also still present. You can delete it by executing the command: 
+
+```
+$ git push origin --delete bad-branch-name
+```
+
+Now the bad branch name is fully replaced with the corrected branch name.
+
+
+# Pág. 89
 Chapter 1 --DONE
 Chapter 2 --DONE
 Chapter 3 
