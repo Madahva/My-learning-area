@@ -298,7 +298,7 @@ $ git branch -d <branch_name>
 ```
 
 
-###  List branches
+### List branches
 
 The _git branch_ command does more than just create and delete branches. If you run it with no arguments, you get a simple listing of your current branches.
 
@@ -333,9 +333,28 @@ $ git push origin --delete bad-branch-name
 Now the bad branch name is fully replaced with the corrected branch name.
 
 
-# Pág. 89
+### Push Branch
+
+Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share:
+
+```
+ $ git push <remote> <branch>
+```
+
+If you do some work on your local master branch, and, in the meantime, someone else pushes to origin and updates its master branch, then your histories move forward differently. Also, as long as you stay out of contact with your origin server, your origin/master **pointer** doesn’t move.
+
+To synchronize your work with a given remote, you run a _git fetch_ `<remote>` command. This command looks up which server “origin” is, fetches any data from it that you don’t yet have, and updates your local database, moving your origin/master **pointer** to its new, more up-to-date position.
+
+
+
+
+
+
+
+# Pág. 135
 Chapter 1 --DONE
 Chapter 2 --DONE
-Chapter 3 
+Chapter 3 --DONE
+Chapter 5  
 Chapter 6
 Appendix C
