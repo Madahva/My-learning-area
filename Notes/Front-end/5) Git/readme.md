@@ -1,1 +1,0 @@
-Git is **an Version Control System**; it is a content tracker.
