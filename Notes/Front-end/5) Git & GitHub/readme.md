@@ -5,6 +5,7 @@ Git is **an Version Control System**; it is a content tracker.
 - Git Setup
 - Clone Repositories
 - Tracking New Files
+- Git Ignore
 - Git Commit 
 - Pulling from Your Remotes
 - Pushing to Your Remotes
@@ -17,5 +18,6 @@ Git is **an Version Control System**; it is a content tracker.
 	- Change branch name
 	- Push An Branch
 - GitHub
-	- Pull Request
+	- The GitHub Flow
+	- Adding Collaborators
 

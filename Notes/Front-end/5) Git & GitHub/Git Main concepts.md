@@ -37,7 +37,7 @@ Git is a distributed version control system (DVCS).
 If a particular version of a file is in the Git directory, it’s considered committed. If it has been modified and was added to the staging area, it is staged. And if it was changed since it was checked out but has not been staged, it is modified
 
 
-## Version Control
+### Version Control
 
 Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
 
@@ -47,7 +47,7 @@ Version control is a system that records changes to a file or set of files over 
 ## Git Commands
 
 
-### Git Setup
+## Git Setup
 
 The first thing you should do when you install Git is to set your user name and email address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you start creating:
 
@@ -69,7 +69,7 @@ $ git config --list
 ```
 
 
-### Clone repository
+## Clone repository
 
 You clone a repository with _git clone `<url>`_ For example, if you want to clone the Git linkable library called **libgit2**, you can do so like this:
 
@@ -102,7 +102,7 @@ nothing to commit, working tree clean
 This means you have a clean working directory; in other words, none of your tracked files are modified.
 
 
-### Tracking New Files
+## Tracking New Files
 
 In order to begin tracking a new file, you use the command _git add `<files>`_. For example, to begin tracking a README file, you can run this: 
 
@@ -113,7 +113,7 @@ $ git add README
 The git add command takes a path  name for either a file or a directory; if it’s a directory, the command adds all the files in that directory recursively.
 
 
-### Git Ignore
+## Git Ignore
 
 Often, you’ll have a class of files that you don’t want Git to automatically add or even show you as being untracked.
 
@@ -139,7 +139,7 @@ doc/**/*.pdf
 ```
 
 
-### Git Commit 
+## Git Commit 
 
 You can type your commit message inline with the _commit_ command by specifying it after a _-m_ flag, like this:
 
@@ -230,12 +230,12 @@ $ git remote -v
 ```
 
 
-### Pulling from Your Remotes
+## Pulling from Your Remotes
 
 You can use the _git pull_ command,  it fetches data from the **server** you originally cloned from and automatically tries to **merge** it into the code you’re currently working on.
 
 
-### Pushing to Your Remotes
+## Pushing to Your Remotes
 
 To push any commits you’ve done back up to the server we use the command _git push_
 
@@ -360,17 +360,38 @@ To reflect those changes that you don't yet have in your directory run _git merg
 You may want to use rebase -i to squash your work down to a single commit, or rearrange the work in the commits to make the patch easier for the maintainer to review.
 
 
-### Pull Request
+## GitHub
 
-The _git request-pull_ command takes the base branch into which you want your topic branch pulled and the Git repository URL you want them to pull from, and produces a summary of all the changes you’re asking to be pulled.
+GitHub is the single largest host for Git repositories, and is the central point of collaboration for millions of developers and projects. A large percentage of all Git repositories are hosted on GitHub, and many open-source projects use it for Git hosting, issue tracking, code review, and other things.
+
+People can fork a project, push to it, and contribute their changes back to the original repository by creating what’s called a Pull Request
 
 
+### The GitHub Flow
 
-# Pág. 154
+GitHub is designed around a particular collaboration workflow, centered on Pull Requests. 
+
+**Here’s how it generally works:** 
+1. Fork the project. 
+2.  Create a topic branch from master. 
+3. Make some commits to improve the project.
+4.  Push this branch to your GitHub project. 
+5. Open a Pull Request on GitHub. 
+6. Discuss, and optionally continue committing.
+7. The project owner merges or closes the Pull Request. 
+8. Sync the updated master back to your fork.
+
+ 
+### Adding Collaborators
+
+If you’re working with other people who you want to give commit access to, you need to add them as “collaborators”.
+
+
+# Pág. 201
 
 Chapter 1 --DONE
 Chapter 2 --DONE
 Chapter 3 --DONE
-Chapter 5  
+Chapter 5  --DONE
 Chapter 6
 Appendix C
