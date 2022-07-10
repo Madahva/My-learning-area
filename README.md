@@ -11,7 +11,7 @@ This is a repository for my practice code and notes (my future Blog website).
 - CSS
 - JavaScript
 - Web Design
-- Git
+- Git & GitHub
 - React
 - TypeScript
 
