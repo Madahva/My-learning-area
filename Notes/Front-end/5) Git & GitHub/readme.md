@@ -20,4 +20,5 @@ Git is **an Version Control System**; it is a content tracker.
 - GitHub
 	- The GitHub Flow
 	- Adding Collaborators
+- Git in Visual Studio Code 
 

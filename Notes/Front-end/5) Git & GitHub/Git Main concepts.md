@@ -384,14 +384,44 @@ GitHub is designed around a particular collaboration workflow, centered on Pull 
  
 ### Adding Collaborators
 
-If you’re working with other people who you want to give commit access to, you need to add them as “collaborators”.
+If you’re working with other people who you want to give commit access to, you need to add them as “collaborators”. Doing so will give them “push” access, which means they have both read and write access to the project and Git repository.
 
 
-# Pág. 201
+## Git in Visual Studio Code 
+
+Visual Studio Code has git support built in. You will need to have git version 2.0.0 (or newer) installed.
+
+
+**The main features are:** 
+- See the diff of the file you are editing in the gutter. 
+- The Git Status Bar (lower left) shows the current branch, dirty indicators, incoming and outgoing commits. 
+- You can do the most common git operations from within the editor: 
+	- Initialize a repository.
+	- Clone a repository. 
+	- Create branches and tags. 
+	- Stage and commit changes. 
+	- Push/pull/sync with a remote branch. 
+	- Resolve merge conflicts. 
+	- View diffs. 
+- With an extension, you can also handle GitHub Pull Requests: https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github. 
+
+
+The official documentation can be found here: https://code.visualstudio.com/Docs/editor/versioncontrol.
+
+
+
+
+
+
+
+
+
+
+# Pág. 502
 
 Chapter 1 --DONE
 Chapter 2 --DONE
 Chapter 3 --DONE
 Chapter 5  --DONE
-Chapter 6
-Appendix C
+Chapter 6 --DONE
+Appendix C 
