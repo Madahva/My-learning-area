@@ -44,9 +44,6 @@ Version control is a system that records changes to a file or set of files over 
 **It allows you** to revert selected files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also generally means that if you screw things up or lose files, you can easily recover.
 
 
-## Git Commands
-
-
 ## Git Setup
 
 The first thing you should do when you install Git is to set your user name and email address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you start creating:
@@ -69,7 +66,12 @@ $ git config --list
 ```
 
 
-## Clone repository
+## Getting and Creating Projects
+
+There are two ways to get a Git repository. One is to copy (**clone**) it from an existing repository on the network or elsewhere and the other is to **create** a new one in an existing directory.
+
+
+### Clone repository
 
 You clone a repository with _git clone `<url>`_ For example, if you want to clone the Git linkable library called **libgit2**, you can do so like this:
 
@@ -88,18 +90,31 @@ $ git clone https://github.com/libgit2/libgit2 mylibgit
 That command does the same thing as the previous one, but the target directory is called **mylibgit**.
 
 
-### Checking the Status of Your Files 
+### Create Repositories
 
-The main tool you use to determine which files are in which state is the _git status_ command. If you run this command directly after a clone, you should see something like this:
+To take a directory and turn it into a new Git repository so you can start version controlling it, you can simply run _git init_.
+
+
+## Adding Remote Repositories
+
+The _git remote_ command is a management tool for your record of remote repositories. It allows you to save long URLs as short handles, such as “origin” so you don’t have to type them out all the time. You can have several of these and the git remote command is used to add, change and delete them
+
+To add a new remote Git repository as a shortname you can reference easily, run:
 
 ```
-$ git status 
-On branch master 
-Your branch is up-to-date with 'origin/master'.
-nothing to commit, working tree clean 
+$ git remote add <shortname> <url>
 ```
 
-This means you have a clean working directory; in other words, none of your tracked files are modified.
+
+### Showing Your Remotes
+
+To see which remote servers you have configured, you can run the _git remote_ command. It lists the shortnames of each remote handle you’ve specified.
+
+You can also specify _-v_, which shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote:
+
+```
+$ git remote -v
+```
 
 
 ## Tracking New Files
@@ -111,6 +126,20 @@ $ git add README
 ```
 
 The git add command takes a path  name for either a file or a directory; if it’s a directory, the command adds all the files in that directory recursively.
+
+
+## Checking the Status of Your Files 
+
+The main tool you use to determine which files are in which state is the _git status_ command. If you run this command directly after a clone, you should see something like this:
+
+```
+$ git status 
+On branch master 
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean 
+```
+
+This means you have a clean working directory; in other words, none of your tracked files are modified.
 
 
 ## Git Ignore
@@ -141,6 +170,8 @@ doc/**/*.pdf
 
 ## Git Commit 
 
+The git commit command takes all the file contents that have been staged with git add and records a new permanent snapshot in the database.
+
 You can type your commit message inline with the _commit_ command by specifying it after a _-m_ flag, like this:
 
 ```
@@ -157,6 +188,8 @@ Write your commit message in the **imperative**: "Fix bug" and not "Fixed bug" o
 
 
 ### Remove from Staging Area
+
+The _git rm_ command is used to remove files from the staging area **and** working directory for Git.
 
 To keep the file in your working tree but remove it from your staging area use:
 
@@ -209,26 +242,6 @@ $ git commit --amend
 
 With _git restore_ any local changes you made to that file are gone — Git just replaced that file with the last staged or committed version.
 
- 
-### Adding Remote Repositories
-
-To add a new remote Git repository as a shortname you can reference easily, run:
-
-```
-$ git remote add <shortname> <url>
-```
-
-
-### Showing Your Remotes
-
-To see which remote servers you have configured, you can run the _git remote_ command. It lists the shortnames of each remote handle you’ve specified.
-
-You can also specify _-v_, which shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote:
-
-```
-$ git remote -v
-```
-
 
 ## Pulling from Your Remotes
 
@@ -236,6 +249,8 @@ You can use the _git pull_ command,  it fetches data from the **server** you ori
 
 
 ## Pushing to Your Remotes
+
+The _git push_ command is used to communicate with another repository, calculate what your local database has that the remote one does not, and then pushes the difference into the other repository.
 
 To push any commits you’ve done back up to the server we use the command _git push_
 
@@ -246,6 +261,10 @@ $ git push origin master
 
 ## Git Branching
 
+There are just a handful of commands that implement most of the **branching** and **merging** functionality in Git.
+
+The _git branch_ command is actually something of a branch management tool. It can **list** the branches you have, **create** a new branch, **delete** branches and **rename** branches
+
 
 ### Creating a New Branch
 
@@ -254,43 +273,6 @@ You do this with the git branch command:
 ```
 $ git branch testing
 ```
-
-
-### Switching Branches 
-
-To switch to an existing branch, you run the git checkout command. 
-
-```
-$ git checkout <branch_name>
-```
-
-
-**Switching branches changes files in your working directory** 
-
-It’s important to note that when you switch branches in Git, files in your working directory will change. If you switch to an older branch, your working directory will be reverted to look like it did the last time you committed on that branch.
-
-
-**Creating a new branch and switching to it at the same time** 
-
-To create and  switch to a new branch at the same time use :
-
-```
-$ git checkout -b <branch_name>
-```
-
-
-### Merge a Branch
-
-All you have to do is **check out** the branch you wish to merge into and then run the _git merge_ command:
-
-```
-$ git merge master
-```
-
-
-**Merge Conflicts**
-
-If you want to use a graphical tool to resolve merge issues, you can run _git mergetool_, which fires up an appropriate visual merge tool and walks you through the conflicts.
 
 
 ### Delete a Branch
@@ -340,7 +322,47 @@ $ git push origin --delete bad-branch-name
 Now the bad branch name is fully replaced with the corrected branch name.
 
 
-### Push An Branch
+### Switching Branches 
+
+The git checkout command is used to **switch** branches and check content out into your working directory.
+
+
+```
+$ git checkout <branch_name>
+```
+
+
+**Switching branches changes files in your working directory** 
+
+It’s important to note that when you switch branches in Git, files in your working directory will change. If you switch to an older branch, your working directory will be reverted to look like it did the last time you committed on that branch.
+
+
+**Creating a new branch and switching to it at the same time** 
+
+To create and  switch to a new branch at the same time use :
+
+```
+$ git checkout -b <branch_name>
+```
+
+
+### Merge A Branch
+
+The _git merge_ tool is used to merge one or more branches into the branch you have checked out. It will then advance the current branch to the result of the merge.
+
+All you have to do is **check out** the branch you wish to merge into and then run the _git merge_ command:
+
+```
+$ git merge master
+```
+
+
+**Merge Conflicts**
+
+If you want to use a graphical tool to resolve merge issues, you can run _git mergetool_, which fires up an appropriate visual merge tool and walks you through the conflicts.
+
+
+### Push A Branch
 
 Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share:
 
@@ -358,6 +380,15 @@ To reflect those changes that you don't yet have in your directory run _git merg
 ### Rebase
 
 You may want to use rebase -i to squash your work down to a single commit, or rearrange the work in the commits to make the patch easier for the maintainer to review.
+
+
+## Git diff
+
+The git diff command is used when you want to see differences between any two trees. 
+
+- This could be the difference between your working environment and your staging area (git diff by itself)
+- Between your staging area and your last commit (git diff --staged)
+- Or between two commits (git diff master branchB).
 
 
 ## GitHub
