@@ -44,6 +44,63 @@ Version control is a system that records changes to a file or set of files over 
 **It allows you** to revert selected files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also generally means that if you screw things up or lose files, you can easily recover.
 
 
+## GitHub
+
+GitHub is the single largest host for Git repositories, and is the central point of collaboration for millions of developers and projects. A large percentage of all Git repositories are hosted on GitHub, and many open-source projects use it for Git hosting, issue tracking, code review, and other things.
+
+People can fork a project, push to it, and contribute their changes back to the original repository by creating what’s called a Pull Request
+
+
+### Repository
+
+To put your project up on GitHub, you will need to create a repository for it to live in.
+
+A repository is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets, and data sets -- anything your project needs
+
+
+### Branch
+
+Branching lets you have different versions of a repository at one time.
+
+By default, your repository has one branch named `main` that is considered to be the definitive branch. You can create additional branches off of `main` in your repository. You can use branches to have different versions of a project at one time. This is helpful when you want to add new features to a project without changing the main source of code. The work done on different branches will not show up on the main branch until you merge it.
+
+
+### Fork
+
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+Most commonly, forks are used to either propose changes to someone else's project to which you do not have write access, or to use someone else's project as a starting point for your own idea.
+
+
+### Pull Request
+
+Pull requests are the heart of collaboration on GitHub. When you open a pull request, you're proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch.
+
+Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in different colors.
+
+Sometimes, a pull request may introduce changes to code that conflict with the existing code on `main`. If there are any conflicts, GitHub will alert you about the conflicting code and prevent merging until the conflicts are resolved. You can make a commit that resolves the conflicts or use comments in the pull request to discuss the conflicts with your team members.
+
+
+### The GitHub Flow
+
+GitHub is designed around a particular collaboration workflow, centered on Pull Requests. 
+
+**Here’s how it generally works:** 
+1. Fork the project. 
+2.  Create a topic branch from master. 
+3. Make some commits to improve the project.
+4.  Push this branch to your GitHub project. 
+5. Open a Pull Request on GitHub. 
+6. Discuss, and optionally continue committing.
+7. The project owner merges or closes the Pull Request. 
+8. Sync the updated master back to your fork.
+
+ 
+### Adding Collaborators
+
+If you’re working with other people who you want to give commit access to, you need to add them as “collaborators”. Doing so will give them “push” access, which means they have both read and write access to the project and Git repository.
+
+
 ## Git Setup
 
 The first thing you should do when you install Git is to set your user name and email address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you start creating:
@@ -389,33 +446,6 @@ The git diff command is used when you want to see differences between any two tr
 - This could be the difference between your working environment and your staging area (git diff by itself)
 - Between your staging area and your last commit (git diff --staged)
 - Or between two commits (git diff master branchB).
-
-
-## GitHub
-
-GitHub is the single largest host for Git repositories, and is the central point of collaboration for millions of developers and projects. A large percentage of all Git repositories are hosted on GitHub, and many open-source projects use it for Git hosting, issue tracking, code review, and other things.
-
-People can fork a project, push to it, and contribute their changes back to the original repository by creating what’s called a Pull Request
-
-
-### The GitHub Flow
-
-GitHub is designed around a particular collaboration workflow, centered on Pull Requests. 
-
-**Here’s how it generally works:** 
-1. Fork the project. 
-2.  Create a topic branch from master. 
-3. Make some commits to improve the project.
-4.  Push this branch to your GitHub project. 
-5. Open a Pull Request on GitHub. 
-6. Discuss, and optionally continue committing.
-7. The project owner merges or closes the Pull Request. 
-8. Sync the updated master back to your fork.
-
- 
-### Adding Collaborators
-
-If you’re working with other people who you want to give commit access to, you need to add them as “collaborators”. Doing so will give them “push” access, which means they have both read and write access to the project and Git repository.
 
 
 ## Git in Visual Studio Code 
