@@ -2,6 +2,14 @@ Git is **an Version Control System**; it is a content tracker.
 
 # Content
 
+- Git
+	- Version Control
+- GitHub
+	- Repository
+	- Branch
+	- Fork
+	- The GitHub Flow
+	- Adding Collaborators
 - Git Setup
 - Getting and Creating Projects
 	- Clone Repositories
@@ -22,8 +30,5 @@ Git is **an Version Control System**; it is a content tracker.
 	- Merge A Branch
 	- Push A Branch
 - Git diff
-- GitHub
-	- The GitHub Flow
-	- Adding Collaborators
 - Git in Visual Studio Code 
 
