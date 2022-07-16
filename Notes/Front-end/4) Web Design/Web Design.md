@@ -1,11 +1,16 @@
 # Web design
 A Web Designer is in charge of designing the **front-end** of a website or web application.
 
+
 ## UI Design
 UI stands for **user interface** so it is  all about thinks like color, typography, spacing, sizing, shape and so on.
 
+
 ## UX design
-UX **(User Experiencie)** includes things like information architecture, user psychology, usability testing, content strategy, wireframes, interaction design and so on.
+
+User experience describes all of the interactions between a customer and your business and throughout the customer’s journey with your products or services.
+
+UX **(User Experience)** includes things like information architecture, user psychology, usability testing, content strategy, wireframes, interaction design and so on.
 
 ---
 
@@ -15,7 +20,7 @@ A project brief is **a short description of key elements of your project**. Thi
 Your project brief should communicate your project requirements without bogging your stakeholders down with too many details.
 
 ### Wireframe
-A warframe is a low-fidelity version of the final design. It should display the final **content** as well as its **structure**.
+A wireframes is a low-fidelity version of the final design. It should display the final **content** as well as its **structure**.
 
 ---
 
