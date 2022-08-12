@@ -1,4 +1,4 @@
-# my-learning-area
+# My Learning Area
 This is a repository for my practice code and notes (my future Blog website).
 
 
