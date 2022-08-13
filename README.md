@@ -13,7 +13,7 @@ This is a repository for my practice code and notes (my future Blog website).
 - Web Design
 - Git & GitHub
 - React
-- TypeScript
+
 
 
 
