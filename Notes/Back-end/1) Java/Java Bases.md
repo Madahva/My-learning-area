@@ -3,6 +3,7 @@
 
 # What is Java?
 
+
 Java is a general-purpose programming language intended to let programmers write once, run anywhere (WORA). This means that compiled Java code can run on all platforms that support Java without the need to recompile.
 
 Java is a popular programming language, created in 1995.
@@ -23,6 +24,7 @@ It is used for:
 
 # Java Syntax
 
+
 When we consider a Java program, it can be defined as a collection of objects that communicate via invoking each other's methods.
 
 About Java programs, it is very important to keep in mind the following points.
@@ -41,17 +43,20 @@ About Java programs, it is very important to keep in mind the following points.
 
 ## The main Method
 
+
 The `main()` method is required and you will see it in every Java program:
 
 ```java
 public static void main(String[] args)
 ```
 
+
 Any code inside the `main()` method will be executed.
 
 
 
 ## Comments in Java
+
 
 Java supports single-line and multi-line comments very similar to C and C++. All characters available inside any comment are ignored by Java compiler.
 
@@ -74,7 +79,8 @@ public class MyFirstJavaProgram {
 
 
 
-## Java Variables
+# Java Variables
+
 
 Variables are containers for storing data values.
 
@@ -96,7 +102,8 @@ type variableName = value;
 
 
 
-### Declare Many Variables
+## Declare Many Variables
+
 
 To declare more than one variable of the **same type**, you can use a comma-separated list:
 
@@ -106,10 +113,10 @@ int x = 5, y = 6, z = 50;
 
 
 
-### One Value to Multiple Variables
+## One Value to Multiple Variables
+
 
 You can also assign the **same value** to multiple variables in one line:
-
 
 ```java
 int x, y, z;
@@ -118,7 +125,8 @@ x = y = z = 50;
 
 
 
-### Final Variables
+## Final Variables
+
 
 If you don't want others (or yourself) to overwrite existing values, use the `final` keyword (this will declare the variable as "final" or "constant", which means unchangeable and read-only):
 
@@ -130,7 +138,8 @@ myNum = 20;  // will generate an error: cannot assign a value to a final variabl
 
 
 
-## Java Data Types
+# Java Data Types
+
 
 Data types are divided into two groups:
 
@@ -139,6 +148,7 @@ Data types are divided into two groups:
 
 
 **A demonstration of how to declare variables of other types:**
+
 ```java
 int myNum = 5;               // Integer (whole number)
 float myFloatNum = 5.99f;    // Floating point number
@@ -150,16 +160,19 @@ String myText = "Hello";     // String
 
 
 
-### Primitive Data Types
+## Primitive Data Types
+
 
 A primitive data type specifies the size and type of variable values, and it has no additional methods.
 
 **There are eight primitive data types in Java:**
+
 ![[Pasted image 20221026190402.png]]
 
 
 
-#### Numbers
+### Numbers
+
 
 Primitive number types are divided into two groups:
 
@@ -168,18 +181,41 @@ Primitive number types are divided into two groups:
 **Floating point types** represents numbers with a fractional part, containing one or more decimals. There are two types: `float` and `double`.
 
 
-#### Booleans
+
+#### Java Math
+
+
+The class `Math` contains many methods for performing basic numeric operations such as the elementary exponential, logarithm, square root, and trigonometric functions.
+
+
+**You can see all the methods here:** https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
+
+
+
+### Booleans
+
 
 A Boolean data type is a value that can only be either `true` or `false`. Boolean values are mostly used for conditional testing.
 
+```java
+boolean isJavaFun = true;
+boolean isFishTasty = false;
+
+System.out.println(isJavaFun);     // Outputs true
+System.out.println(isFishTasty);   // Outputs false
+```
 
 
-#### Characters
+
+### Characters
+
 
 The `char` data type is used to store a **single** character. The character must be surrounded by single quotes, like 'A' or 'c':
 
 
-### Non-Primitive Data Types
+
+## Non-Primitive Data Types
+
 
 Non-primitive data types are called **reference types** because they refer to objects.
 
@@ -194,10 +230,11 @@ The main difference between **primitive** and **non-primitive** data types are:
 Examples of non-primitive types are [Strings](https://www.w3schools.com/java/java_strings.asp), [Arrays](https://www.w3schools.com/java/java_arrays.asp), [Classes,](https://www.w3schools.com/java/java_classes.asp) [Interface](https://www.w3schools.com/java/java_interface.asp), etc. You will learn more about these in a later chapter.
 
 
-#### Strings
+
+### Strings
+
 
 The `String` data type is used to store a sequence of characters (text). String values must be surrounded by double quotes:
-
 
 ```java
 String greeting = "Hello World";
@@ -208,14 +245,59 @@ System.out.println(greeting);
 A String in Java is actually a **non-primitive** data type, because it refers to an object. The String object has methods that are used to perform certain operations on strings.
 
 
+**There are many string methods available**
+
+
+#### String Concatenation
+
+
+The `+` operator can be used between strings to combine them. This is called **concatenation**:
+
+```java
+String firstName = "John";
+String lastName = "Doe";
+System.out.println(firstName + " " + lastName + " ☺"); // John Doe ☺
+```
+
+
+You can also use the `concat()` method to concatenate two strings.
+
+
+### Escape sequences
+
+
+Because strings must be written within quotes, Java will misunderstand this string, and generate an error:
+
+```java
+String txt = "We are the so-called "Vikings" from the north.";
+```
+
+
+The solution to avoid this problem, is to use the **backslash escape character**.
+
+The backslash (`\`) escape character turns special characters into string characters:
+
+```java
+String txt = "We are the so-called \"Vikings\" from the north.";
+// We are the so-called "Vikings" from the north.
+```
+
+
+**Other common escape sequences that are valid in Java are:**
+
+![[Pasted image 20221029101733.png]]
+
+
 
 ### Java Arrays
 
-Arrays are objects that store multiple variables of the same type. However, an array itself is an object on the heap. We will look into how to declare, construct, and initialize in the upcoming chapters.
+
+Arrays are objects that store multiple variables of the same type. However, an array itself is an object on the heap.
 
 
 
 ## Java Identifiers
+
 
 All Java components require names. Names used for classes, variables, and methods are called **identifiers**.
 
@@ -239,11 +321,105 @@ The general rules for naming variables are:
 
 ## Java Modifiers
 
+
 Like other languages, it is possible to modify classes, methods, etc., by using modifiers. There are two categories of modifiers:
 
 -   **Access Modifiers** − default, public , protected, private
 
 -   **Non-access Modifiers** − final, abstract, strictfp
+
+
+
+## Java Type Casting
+
+
+Type casting is when you assign a value of one primitive data type to another type.
+
+In Java, there are two types of casting:
+
+**Widening Casting** (automatically) - converting a smaller type to a larger type size  
+`byte` -> `short` -> `char` -> `int` -> `long` -> `float` -> `double`  
+
+Widening casting is done automatically when passing a smaller size type to a larger size type:
+
+```java
+int myInt = 9;
+double myDouble = myInt; // Automatic casting: int to double
+```
+
+
+**Narrowing Casting** (manually) - converting a larger type to a smaller size type  
+`double` -> `float` -> `long` -> `int` -> `char` -> `short` -> `byte`
+
+
+Narrowing casting must be done manually by placing the type in parentheses in front of the value:
+
+```java
+double myDouble = 9.78d;
+int myInt = (int) myDouble; // Manual casting: double to int
+```
+
+
+
+## Java Operators
+
+
+Operators are used to perform operations on variables and values.
+
+Java divides the operators into the following groups:
+
+-   Arithmetic operators
+-   Assignment operators
+-   Comparison operators
+-   Logical operators
+-   Bitwise operators
+
+
+
+### Arithmetic Operators
+
+
+Arithmetic operators are used to perform common mathematical operations.
+
+![[Pasted image 20221029095227.png]]
+
+
+
+### Java Assignment Operators
+
+
+Assignment operators are used to assign values to variables.
+
+```java
+int x = 10;
+```
+
+
+**A list of all assignment operators:**
+
+![[Pasted image 20221029095446.png]]
+
+
+
+### Java Comparison Operators
+
+
+Comparison operators are used to compare two values. The return value of a comparison is either `true` or `false`.
+
+```java
+int x = 5;
+int y = 3;
+System.out.println(x > y); // returns true, because 5 is higher than 3
+```
+
+
+**A list of all Comparison operators:**
+
+![[Pasted image 20221029095633.png]]
+
+
+
+
 
 
 
