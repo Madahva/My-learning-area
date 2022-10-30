@@ -21,6 +21,8 @@ It is used for:
 -   And much, much more!
 
 
+---
+
 
 # Java Syntax
 
@@ -77,6 +79,42 @@ public class MyFirstJavaProgram {
 }
 ```
 
+
+
+## Java Modifiers
+
+
+Like other languages, it is possible to modify classes, methods, etc., by using modifiers. There are two categories of modifiers:
+
+-   **Access Modifiers** − default, public , protected, private
+
+-   **Non-access Modifiers** − final, abstract, strictfp
+
+
+
+## Java Identifiers
+
+
+All Java components require names. Names used for classes, variables, and methods are called **identifiers**.
+
+All Java **variables** must be **identified** with **unique names**.
+
+These unique names are called **identifiers**.
+
+**Note:** It is recommended to use descriptive names in order to create understandable and maintainable code.
+
+
+The general rules for naming variables are:
+
+-   Names can contain letters, digits, underscores, and dollar signs
+-   Names must begin with a letter
+-   Names should start with a lowercase letter and it cannot contain whitespace
+-   Names can also begin with $ and _
+-   Names are case sensitive ("myVar" and "myvar" are different variables)
+-   Reserved words (like Java keywords, such as `int` or `boolean`) cannot be used as names
+
+
+---
 
 
 # Java Variables
@@ -136,6 +174,8 @@ final int myNum = 15;
 myNum = 20;  // will generate an error: cannot assign a value to a final variable
 ```
 
+
+---
 
 
 # Java Data Types
@@ -291,42 +331,29 @@ String txt = "We are the so-called \"Vikings\" from the north.";
 
 ### Java Arrays
 
-
 Arrays are objects that store multiple variables of the same type. However, an array itself is an object on the heap.
 
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+To declare an array, define the variable type with **square brackets**. To insert values to it, you can place the values in a comma-separated list, inside curly braces:
+
+**Example**
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+```
 
 
-## Java Identifiers
+You can access an array element by referring to the index number.
+
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+System.out.println(cars[0]);
+// Now outputs Opel instead of Volvo
+```
 
 
-All Java components require names. Names used for classes, variables, and methods are called **identifiers**.
-
-All Java **variables** must be **identified** with **unique names**.
-
-These unique names are called **identifiers**.
-
-**Note:** It is recommended to use descriptive names in order to create understandable and maintainable code.
-
-
-The general rules for naming variables are:
-
--   Names can contain letters, digits, underscores, and dollar signs
--   Names must begin with a letter
--   Names should start with a lowercase letter and it cannot contain whitespace
--   Names can also begin with $ and _
--   Names are case sensitive ("myVar" and "myvar" are different variables)
--   Reserved words (like Java keywords, such as `int` or `boolean`) cannot be used as names
- 
-
-
-## Java Modifiers
-
-
-Like other languages, it is possible to modify classes, methods, etc., by using modifiers. There are two categories of modifiers:
-
--   **Access Modifiers** − default, public , protected, private
-
--   **Non-access Modifiers** − final, abstract, strictfp
+**Note:** Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
 
 
 
@@ -360,8 +387,10 @@ int myInt = (int) myDouble; // Manual casting: double to int
 ```
 
 
+---
 
-## Java Operators
+
+# Java Operators
 
 
 Operators are used to perform operations on variables and values.
@@ -376,7 +405,7 @@ Java divides the operators into the following groups:
 
 
 
-### Arithmetic Operators
+## Arithmetic Operators
 
 
 Arithmetic operators are used to perform common mathematical operations.
@@ -385,7 +414,7 @@ Arithmetic operators are used to perform common mathematical operations.
 
 
 
-### Java Assignment Operators
+## Java Assignment Operators
 
 
 Assignment operators are used to assign values to variables.
@@ -401,7 +430,7 @@ int x = 10;
 
 
 
-### Java Comparison Operators
+## Java Comparison Operators
 
 
 Comparison operators are used to compare two values. The return value of a comparison is either `true` or `false`.
@@ -419,9 +448,178 @@ System.out.println(x > y); // returns true, because 5 is higher than 3
 
 
 
+## Java Logical Operators
+
+
+Logical operators are used to check whether an expression is `true` or `false`. They are used in decision making.
+
+![[Pasted image 20221030124533.png]]
+
+
+---
+
+
+# Control structures
+
+**Control structures are programming blocks that can change the path we take through those instructions.**
 
 
 
+## Conditional statements
+
+**Java has the following conditional statements:**
+
+-   Use `if` to specify a block of code to be executed, if a specified condition is true
+-   Use `else` to specify a block of code to be executed, if the same condition is false
+-   Use `else if` to specify a new condition to test, if the first condition is false
+-   Use `switch` to specify many alternative blocks of code to be executed
+
+
+ 
+### Ternary operator
+
+There is also a short-hand if else, which is known as the **ternary operator** because it consists of three operands.
+
+It can be used to replace multiple lines of code with a single line, and is most often used to replace simple if else statements:
+
+**Syntax**
+```java
+variable = (condition) ? expressionTrue :  expressionFalse;
+```
+
+
+
+## Java Loops
+
+Loops that are used to **iterate through multiple values/objects and repeatedly run specific code blocks.** The basic loop types in Java are _for_, _while_ and _do while_.
+
+Loops can execute a block of code as long as a specified condition is reached.
+
+Loops are handy because they save time, reduce errors, and they make code more readable.
+
+
+
+### Java While Loop
+
+The `while` loop loops through a block of code as long as a specified condition is `true`:
+
+```java
+int i = 0;
+
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}
+
+//Output: 0 1 2 3 4
+```
+
+
+
+### The Do/While Loop
+
+The `do/while` loop is a variant of the `while` loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+
+```java
+int i = 0;
+
+do {
+  System.out.println(i);
+  i++;
+} while (i < 5);
+
+//Output: 0 1 2 3 4
+```
+**Do not forget to increase the variable used in the condition, otherwise the loop will never end!**
+
+
+
+### Java For Loop
+
+When you know exactly how many times you want to loop through a block of code, use the `for` loop instead of a `while` loop:
+
+```java
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+```
+
+
+**Statement 1** is executed (one time) before the execution of the code block.
+
+**Statement 2** defines the condition for executing the code block.
+
+**Statement 3** is executed (every time) after the code block has been executed.
+
+
+**Example**
+```java
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+
+//Output: 0 1 2 3 4
+```
+
+
+
+### Java for-each Loop
+
+In Java, the for-each loop is used to iterate through elements of arrays and collections (like ArrayList). 
+
+
+**Syntax**
+``` java
+for (dataType item : array) {
+// code block to be executed
+}
+```
+
+
+**Example**
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (String i : cars) {
+  System.out.println(i);
+}
+
+// Output: Volvo BMW Ford Mazda
+```
+
+
+
+### Java Break and Continue
+
+While working with loops, it is sometimes desirable to skip some statements inside the loop or terminate the loop immediately without checking the test expression.
+
+In such cases, break and continue statements are used
+
+
+
+####  Break
+
+The break statement in Java terminates the loop immediately, and the control of the program moves to the next statement following the loop.
+
+It is almost always used with decision-making statements (Java if...else Statement).
+
+``` java 
+break;
+```
+
+
+
+#### Java continue
+
+The `continue` statement skips the current iteration of a loop (`for`, `while`, `do...while`, etc).
+
+After the `continue` statement, the program moves to the end of the loop. And, test expression is evaluated (update statement is evaluated in case of the for loop).
+
+``` java
+continue;
+```
+
+
+---
 
 
 
