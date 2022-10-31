@@ -21,7 +21,14 @@ It is used for:
 -   And much, much more!
 
 
+**Java is an object-oriented programming language.**
+
+Everything in Java is associated with classes and objects, along with its attributes and methods.
+
+
+
 ---
+
 
 
 # Java Syntax
@@ -114,7 +121,9 @@ The general rules for naming variables are:
 -   Reserved words (like Java keywords, such as `int` or `boolean`) cannot be used as names
 
 
+
 ---
+
 
 
 # Java Variables
@@ -175,7 +184,9 @@ myNum = 20;  // will generate an error: cannot assign a value to a final variabl
 ```
 
 
+
 ---
+
 
 
 # Java Data Types
@@ -267,7 +278,7 @@ The main difference between **primitive** and **non-primitive** data types are:
 -   A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
 -   The size of a primitive type depends on the data type, while non-primitive types have all the same size.
 
-Examples of non-primitive types are [Strings](https://www.w3schools.com/java/java_strings.asp), [Arrays](https://www.w3schools.com/java/java_arrays.asp), [Classes,](https://www.w3schools.com/java/java_classes.asp) [Interface](https://www.w3schools.com/java/java_interface.asp), etc. You will learn more about these in a later chapter.
+Examples of non-primitive types are `Strings`, `Arrays`, `Classes`, `Interface`.
 
 
 
@@ -357,6 +368,29 @@ System.out.println(cars[0]);
 
 
 
+#### Loop Through an Array
+
+You can loop through the array elements with the `for` loop, and use the `length` property to specify how many times the loop should run.
+
+There is also a "**for-each**" loop, which is used exclusively to loop through elements in arrays.
+
+
+
+#### Multidimensional Arrays
+
+A multidimensional array is an array of arrays.
+
+To create a two-dimensional array, add each array within its own set of **curly braces**:
+
+**Example**
+```java
+int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+```
+
+To access the elements of the **myNumbers** array, specify two indexes: one for the array, and one for the element inside that array.
+
+
+
 ## Java Type Casting
 
 
@@ -387,7 +421,9 @@ int myInt = (int) myDouble; // Manual casting: double to int
 ```
 
 
+
 ---
+
 
 
 # Java Operators
@@ -456,7 +492,9 @@ Logical operators are used to check whether an expression is `true` or `false`. 
 ![[Pasted image 20221030124533.png]]
 
 
+
 ---
+
 
 
 # Control structures
@@ -619,15 +657,76 @@ continue;
 ```
 
 
+
 ---
 
 
 
+# Java Methods
 
-**Object** − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.
 
-**Class** − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.
+A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.
 
-**Methods** − A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.
+A **method** is a block of code which only runs when it is called.
 
-**Instance Variables** − Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.
+You can pass data, known as parameters, into a method.
+
+Methods are used to perform certain actions, and they are also known as **functions**.
+
+Why use methods? To reuse code: define the code once, and use it many times.
+
+
+
+## Create a Method
+
+
+A method must be declared within a class. It is defined with the name of the method, followed by parentheses **()**.
+
+
+
+## Call a Method
+
+
+To call a method in Java, write the method's name followed by two parentheses **()** and a semicolon **;**
+
+
+
+## Parameters and Arguments
+
+
+Information can be passed to methods as parameter. Parameters act as variables inside the method.
+
+Parameters are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.
+
+
+
+## Method Overloading
+
+
+With **method overloading**, multiple methods can have the same name with different parameters:
+
+**Note:** Multiple methods can have the same name as long as the number and/or type of parameters are different.
+
+
+
+## Java Scope
+
+
+In Java, variables are only accessible inside the region they are created. This is called **scope**.
+
+A block of code refers to all of the code between curly braces `{}`.
+
+Variables declared inside blocks of code are only accessible by the code between the curly braces, which follows the line in which the variable was declared:
+
+
+
+## Java Recursion
+
+
+Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+
+**Note:** Every recursive function should have a halting condition, which is the condition where the function stops calling itself.
+
+
+
+---
