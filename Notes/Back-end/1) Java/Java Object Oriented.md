@@ -56,6 +56,44 @@ In Java, an object is created from a class.
 
 You can create multiple objects of one class.
 
+If you create multiple objects of one class, you can change the attribute values in one object, without affecting the attribute values in the other.
+
+
+
+## Java Class Attributes
+
+
+**Class attributes are variables within a class**
+
+
+```java
+public class Main {
+  int x = 5;
+  int y = 3;
+}
+```
+
+
+
+### Accessing Attributes
+
+
+You can access attributes by creating an object of the class, and by using the dot syntax (`.`):
+
+
+
+## Java Class Methods
+
+
+To call a method, write the method's name followed by two parentheses **()** and a semicolon **;**
+
+
+
+## Java Constructors
+
+
+A constructor in Java is a **special method** that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes.
+
 
 
 
