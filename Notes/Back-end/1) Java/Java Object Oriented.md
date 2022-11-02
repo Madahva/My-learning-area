@@ -96,6 +96,7 @@ A constructor in Java is a **special method** that is used to initialize objects
 
 
 
+**Constructors can also take parameters, which is used to initialize attributes.**
 
 ## Inheritance
 
@@ -112,7 +113,59 @@ An interface defines the methods, a deriving class (subclass) should use. But th
 
 
 
+---
 
+
+
+# Java Modifiers
+
+
+We divide modifiers into two groups:
+
+-   **Access Modifiers** - controls the access level
+-   **Non-Access Modifiers** - do not control access level, but provides other functionality
+
+
+
+## Access Modifiers
+
+
+In Java, access modifiers are used to set the accessibility (visibility) of classes, interfaces, variables, methods, constructors, data members, and the setter methods.
+
+
+**There are four access modifiers keywords in Java and they are:**
+
+
+**Default**: declarations are visible only within the package (package private)
+
+**Private** declarations are visible within the class only
+
+**Protected** declarations are visible within the package or all subclasses
+
+**Public** declarations are visible everywhere
+
+
+
+## Non-Access modifiers 
+
+
+Non-access modifiers provide information about the characteristics of a class, method, or variable to the JVM. 
+
+**There are a total of 7 non-access modifiers introduced.**
+
+-   Static.
+-   Final.
+-   Abstract.
+-   Synchronized.
+-   transient.
+-   strictfp.
+-   native.
+
+
+
+
+
+---
 **Object** − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.
 
 **Class** − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.
