@@ -100,6 +100,15 @@ A constructor in Java is a **special method** that is used to initialize objects
 
 
 
+## Java Inner Classes
+
+
+In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.
+
+To access the inner class, create an object of the outer class, and then create an object of the inner class.
+
+
+
 ## Encapsulation
 
 
@@ -152,12 +161,17 @@ In Java, classes can be derived from classes. Basically, if you need to create a
 This concept allows you to reuse the fields and methods of the existing class without having to rewrite the code in a new class. In this scenario, the existing class is called the **superclass** and the derived class is called the **subclass**.
 
 
+To inherit from a class, use the `extends` keyword.
 
-## Interfaces
 
-In Java language, an interface can be defined as a contract between objects on how to communicate with each other. Interfaces play a vital role when it comes to the concept of inheritance.
 
-An interface defines the methods, a deriving class (subclass) should use. But the implementation of the methods is totally up to the subclass.
+## Java Polymorphism
+
+
+
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+
+**It is useful for code reusability:** reuse attributes and methods of an existing class when you create a new class.
 
 
 
@@ -250,10 +264,114 @@ The native keyword may be applied to a method to indicate that the method is imp
 
 
 
+---
+
+
+
+# Interfaces
+
+
+In Java language, an interface can be defined as a contract between objects on how to communicate with each other. Interfaces play a vital role when it comes to the concept of inheritance.
+
+An interface defines the methods, a deriving class (subclass) should use. But the implementation of the methods is totally up to the subclass.
+
+An `interface` is a completely "**abstract class**" that is used to group related methods with empty bodies.
+
+To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class with the `implements` keyword (instead of `extends`). The body of the interface method is provided by the "implement" class.
+
+
+
+**Why And When To Use Interfaces?**
+
+1) To achieve security - hide certain details and only show the important details of an object (interface).
+
+2) Java does not support "multiple inheritance" (a class can only inherit from one superclass). However, it can be achieved with interfaces, because the class can **implement** multiple interfaces. **Note:** To implement multiple interfaces, separate them with a comma.
+
+
 
 ---
-**Object** − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.
 
-**Class** − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.
 
-**Instance Variables** − Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.
+
+
+# Enums
+
+
+An `enum` is a special "class" that represents a group of **constants** (unchangeable variables, like `final` variables).
+
+To create an `enum`, use the `enum` keyword (instead of class or interface), and separate the constants with a comma. Note that they should be in uppercase letters.
+
+
+**Example**
+```java
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+```
+
+
+You can access `enum` constants with the **dot** syntax:
+
+```java
+Level myVar = Level.MEDIUM;
+```
+
+
+**Enum** is short for "enumerations", which means "specifically listed".
+
+
+
+#### Difference between Enums and Classes
+
+
+An `enum` can, just like a `class`, have attributes and methods. The only difference is that enum constants are `public`, `static` and `final` (unchangeable - cannot be overridden).
+
+An `enum` cannot be used to create objects, and it cannot extend other classes (but it can implement interfaces).
+
+
+
+#### Why And When To Use Enums?
+
+
+Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+
+
+---
+
+
+
+# Java Packages & API
+
+
+A package in Java is used to group related classes. Think of it as **a folder in a file directory**. We use packages to avoid name conflicts, and to write a better maintainable code. Packages are divided into two categories:
+
+-   Built-in Packages (packages from the Java API)
+-   User-defined Packages (create your own packages)
+
+
+
+## Built-in Packages
+
+
+The Java API is a library of prewritten classes, that are free to use, included in the Java Development Environment.
+
+The library contains components for managing input, database programming, and much much more. The complete list can be found at Oracles website: [https://docs.oracle.com/javase/8/docs/api/](https://docs.oracle.com/javase/8/docs/api/).
+
+The library is divided into **packages** and **classes**. Meaning you can either import a single class (along with its methods and attributes), or a whole package that contain all the classes that belong to the specified package.
+
+To use a class or a package from the library, you need to use the `import` keyword:
+
+
+```java
+import package.name.Class;   // Import a single class
+import package.name.*;   // Import the whole package
+```
+
+
+
+---
+
+
