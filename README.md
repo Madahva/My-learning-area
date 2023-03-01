@@ -13,6 +13,7 @@ This is a repository for my practice code and notes (My future Blog website).
   - Web Design
   - Git & GitHub
   - React
+  - Redux-Toolkit
 
 - Back-end
   - Java
