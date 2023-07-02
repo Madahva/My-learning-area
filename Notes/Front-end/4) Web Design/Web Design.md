@@ -169,3 +169,15 @@ Get to know the most **common web design patterns** and see how other people are
 When designing a website, make sure it looks good on **smaller** or **larger** screens. **Responsive web design** is critical.
 
 ---
+
+
+### Font height
+
+For tittles 96X1.1
+For paragraphs 20X1.3
+
+
+### Letter spacing
+
+For Tittles -1% or -2%.
+
