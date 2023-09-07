@@ -243,3 +243,160 @@ Sometimes, you may need to transition between the client and server environments
 To achieve this, you can seamlessly interleave Client Components and Server Components, along with Server Actions. This flexibility allows you to adapt your rendering strategy to the specific needs of your application.
 
 In summary, Client Components open up exciting possibilities for creating interactive and dynamic user interfaces. By understanding when and how to use them in Next.js, you can take your web development projects to the next level, providing users with fast, responsive, and engaging experiences.
+
+---
+
+# Exploring Server and Client Composition Patterns in React
+
+When diving into the world of building React applications, one crucial consideration is determining which parts of your application should be rendered on the server and which should reside on the client. In this article, we'll explore recommended composition patterns when working with Server and Client Components in React.
+
+## When to Use Server and Client Components?
+
+Before delving into the composition patterns, it's essential to understand when to use Server and Client Components. Here's a quick summary of the use cases for each:
+
+- **Server Component**:
+  - ✅ Fetch data.
+  - ✅ Access backend resources directly.
+  - ✅ Keep sensitive information on the server (e.g., access tokens, API keys).
+  - ✅ Keep large dependencies on the server to reduce client-side JavaScript.
+  - ❌ Add interactivity and event listeners (e.g., `onClick()`, `onChange()`).
+  - ❌ Use State and Lifecycle Effects (e.g., `useState()`, `useReducer()`, `useEffect()`).
+  - ❌ Use browser-only APIs.
+  - ❌ Use custom hooks dependent on state, effects, or browser-only APIs.
+  - ❌ Use [React Class components](https://react.dev/reference/react/Component).
+
+- **Client Component**:
+  - ❌ Fetch data.
+  - ❌ Access backend resources directly.
+  - ❌ Keep sensitive information on the server (e.g., access tokens, API keys).
+  - ❌ Keep large dependencies on the server to reduce client-side JavaScript.
+  - ✅ Add interactivity and event listeners (e.g., `onClick()`, `onChange()`).
+  - ✅ Use State and Lifecycle Effects (e.g., `useState()`, `useReducer()`, `useEffect()`).
+  - ✅ Use browser-only APIs.
+  - ✅ Use custom hooks dependent on state, effects, or browser-only APIs.
+  - ✅ Use [React Class components](https://react.dev/reference/react/Component).
+
+Now, let's explore some composition patterns for Server and Client Components.
+
+## Server Component Patterns
+
+### Sharing Data Between Components
+
+When working with Server Components, you may need to share data across different components. For example, you might have a layout and a page that both rely on the same data. Instead of using React Context (which isn't available on the server) or passing data as props, you can leverage the `fetch` function or React's `cache` function.
+
+React automatically memoizes data requests made with `fetch`, and the `cache` function can be used when `fetch` isn't available. This ensures that components fetching the same data won't make duplicate requests, making your application more efficient. [Learn more about memoization](/docs/app/building-your-application/caching#request-memoization) in React.
+
+### Keeping Server-only Code Isolated
+
+It's possible for server-only code to find its way into client modules since JavaScript modules are shared between Server and Client Components. To prevent this, you can use the `server-only` package. This package helps catch errors during the build process if server-only code is imported into a Client Component.
+
+To use `server-only`, follow these steps:
+
+1. Install the package: `npm install server-only`.
+2. Import the package into any module containing server-only code.
+3. Mark the module as server-only by importing `'server-only'`.
+
+This ensures that any Client Component importing a server-only module will trigger a build-time error, helping maintain the separation between server and client code.
+
+### Using Third-party Packages and Providers
+
+When working with Server Components, keep in mind that not all third-party packages and providers in the React ecosystem are equipped to handle server rendering. Some packages may lack the `"use client"` directive, making them incompatible with Server Components.
+
+For such cases, you can wrap third-party components that rely on client-only features in your own Client Components. This ensures that these components work as expected within your Server Components.
+
+### Using Context Providers
+
+Context providers play a crucial role in sharing global concerns, like themes, within your application. However, React Context is not supported in Server Components. To use context providers, create them within a Client Component and then render them at the root level of your Server Component. This way, the context can be consumed by all Client Components throughout your app.
+
+## Client Components
+
+### Moving Client Components Down the Tree
+
+To optimize the size of your Client JavaScript bundle, consider moving Client Components deeper into your component tree. Instead of making the entire layout a Client Component, isolate interactive logic within Client Components, leaving the layout as a Server Component. This approach reduces the amount of JavaScript sent to the client.
+
+### Passing Props from Server to Client Components (Serialization)
+
+If you fetch data in a Server Component and want to pass it as props to Client Components, ensure that the data is serializable by React. If your data isn't serializable, consider fetching it on the client using a third-party library or via a Route Handler on the server.
+
+## Interleaving Server and Client Components
+
+When combining Server and Client Components in your application, it's helpful to visualize your UI as a tree of components. Starting with the root layout, which is typically a Server Component, you can render specific subtrees as Client Components by adding the `"use client"` directive.
+
+Remember the following considerations when interleaving Server and Client Components:
+
+- During the request-response lifecycle, your code moves from the server to the client, making a new request to the server if necessary.
+- All Server Components are rendered first during a server request, including those nested inside Client Components. React uses a payload to reconcile Server and Client Components on the client.
+
+### Supported Pattern: Passing Server Components to Client Components as Props
+
+You can pass Server Components as props to Client Components. One common pattern is to use the `children` prop to create a slot in your Client Component, which can be filled with the result of a Server Component.
+
+In this approach, Server and Client Components remain decoupled and can be rendered independently. The child Server Component can be rendered on the server long before the Client Component is rendered on the client.
+
+Remember that you're not limited to the `children` prop; you can use any prop to pass JSX.
+
+## Wrapping Up
+
+Understanding when and how to use Server and Client Components in React is crucial for building efficient applications. By following these composition patterns and best practices, you can harness the power of Server Components while optimizing the performance and maintainability of your React applications. Whether you're sharing data, isolating server-only code, or interleaving components, these patterns will help you make informed architectural decisions for your next React project.
+
+---
+
+# Understanding Next.js Runtimes: Node.js vs. Edge
+
+When building web applications with Next.js, one critical aspect to consider is the runtime environment where your code executes. In the context of Next.js, a runtime refers to the set of libraries, APIs, and functionalities available to your code during execution. Next.js offers two main runtime environments on the server: the **Node.js Runtime** (which is the default) and the **Edge Runtime**. In this blog post, we'll explore the key differences between these runtimes and when to choose one over the other.
+
+## Node.js Runtime: The Default Choice
+
+The **Node.js Runtime** is the default environment for Next.js applications. It provides access to all Node.js APIs and is compatible with packages from the Node.js ecosystem. This runtime offers great flexibility, but it's essential to be aware of its characteristics:
+
+- **Cold Boot**: When a Node.js runtime starts, it can have a slower "cold boot" time, which means it takes a bit longer to initialize.
+- **HTTP Streaming**: Node.js supports HTTP streaming, which allows for efficient loading of UI and streaming content to clients.
+- **IO Operations**: Node.js can handle various IO operations efficiently.
+- **Scalability**: While it is scalable, it may not be as suitable for extremely high loads compared to the Edge Runtime.
+- **Security**: Node.js provides normal security levels for your application.
+- **Latency**: The latency in the Node.js Runtime is normal, neither particularly high nor low.
+- **npm Packages**: You can use any npm package that relies on Node.js APIs.
+- **Static Rendering**: Node.js supports static rendering, making it a good choice for generating static pages.
+- **Dynamic Rendering**: It also supports dynamic rendering with server components.
+- **Data Revalidation**: Data revalidation using the `fetch` function is possible in this runtime.
+
+Using the Node.js Runtime gives you the full power of Node.js, but it comes with the responsibility of managing, scaling, and configuring your infrastructure if you deploy your Next.js application to a Node.js server.
+
+## Edge Runtime: Speed and Limitations
+
+The **Edge Runtime** is a lightweight subset of Node.js APIs available in Next.js. It is ideal for scenarios where speed and low latency are critical. Here are some key characteristics of the Edge Runtime:
+
+- **Cold Boot**: Edge Runtime offers instant cold boot, making it exceptionally fast to start.
+- **HTTP Streaming**: Similar to Node.js, Edge Runtime also supports HTTP streaming.
+- **IO Operations**: Instead of traditional IO operations, Edge Runtime relies on the `fetch` function for data retrieval.
+- **Scalability**: The Edge Runtime is highly scalable, making it suitable for high loads.
+- **Security**: It offers high security levels.
+- **Latency**: Edge Runtime has the lowest latency, which is crucial for delivering content quickly.
+- **npm Packages**: It supports only a smaller subset of npm packages due to its lightweight nature.
+- **Static Rendering**: Edge Runtime does not support static rendering.
+- **Dynamic Rendering**: It supports dynamic rendering with server components.
+- **Data Revalidation**: Data revalidation using the `fetch` function is possible in this runtime.
+
+The key advantage of the Edge Runtime is its speed, with instant cold boots and minimal resource usage. However, it has limitations, such as a size limit for code execution (between 1 MB and 4 MB, depending on your deployment infrastructure). This size limit includes imported packages, fonts, and files.
+
+## When to Choose Each Runtime
+
+### Node.js Runtime
+- Choose the Node.js Runtime when you need access to the full range of Node.js APIs and npm packages.
+- Opt for Node.js if you're building a complex application that requires extensive server-side processing.
+- Consider Node.js when static rendering is a requirement for your project.
+
+### Edge Runtime
+- Use the Edge Runtime when speed and low latency are paramount, such as delivering personalized content quickly.
+- Opt for Edge when you need to handle high loads efficiently.
+- Consider Edge for scenarios where code execution size limitations are acceptable.
+
+## Switching Runtimes in Next.js
+
+By default, the `app` directory in your Next.js project uses the Node.js Runtime. However, Next.js allows you to switch runtimes on a per-route basis. You can specify the runtime for individual route segments by declaring a variable called `runtime` and exporting it in your route files. The variable should have a value of either `'nodejs'` or `'edge'`. Additionally, you can define `runtime` on a layout level, making all routes under the layout run on the Edge Runtime.
+
+It's crucial to make an informed decision about which runtime to use for each part of your application to achieve the right balance between speed, scalability, and functionality.
+
+In summary, Next.js offers two powerful runtimes—Node.js and Edge—with distinct characteristics. Your choice of runtime should align with the specific needs of your project, whether it's maximizing speed, utilizing extensive Node.js capabilities, or finding a balance between the two. Understanding these runtimes allows you to optimize your Next.js application for performance and functionality.
+
+---
